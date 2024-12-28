@@ -1,17 +1,12 @@
 extends Node2D
 
 var velocidade: int = 400
-var municao: int = 10
-var municao_total: int = MUNICAO_LASER + 10
-var granadas: int = 5
 
-const MUNICAO_LASER: int = 40
-const NUM_GRANADAS: int = 5
-const VAZIO: int = 0
+func _ready() -> void:
+	$Arma.hud_arma()
 
 func _process(delta: float) -> void:
 	
-	var tiros_disparados = 0
 	# Entrada de teclas e controle de personagem em 8 direções
 	var direcao: Vector2
 	
@@ -19,31 +14,25 @@ func _process(delta: float) -> void:
 	
 	position += direcao * velocidade * delta
 	
-	#print(direcao)
-	
 	# Controle de disparo do personagem
-	if Input.is_action_just_pressed("primary_action") and municao != VAZIO:
-		print("Disparo")
-		municao -= 1
-		tiros_disparados += 1
-		print(municao,"/", municao_total)
-		if municao <= VAZIO:
+	if Input.is_action_just_pressed("primary_action") and $Arma.municao != $Arma.VAZIO:
+		$Arma.disparo()
+		$Arma.hud_arma()
+		if $Arma.arma_vazia():
 			print("pressione R para recarregar!!")
-	if Input.is_action_just_pressed("reload") and municao_total > VAZIO:
-			municao_total -= tiros_disparados
-			municao = 10
-			tiros_disparados = 0
-			print("Reloading!!")
+
+	# Recarga de arma
+	if Input.is_action_just_pressed("reload"):
+			$Arma.recarregar()
 		
-	if Input.is_action_just_pressed("secondary_action") and granadas != VAZIO:
-		print("Fire in a hole!!")
-		granadas -= 1
-		print("Grandas: ", granadas)
-	if Input.is_action_just_pressed("secondary_action") and granadas == VAZIO:
+	# Disparo secundário da arma, no caso um lança granadas
+	if Input.is_action_just_pressed("secondary_action") and $Arma.granadas != $Arma.VAZIO:
+		$Arma.disparo_secundario()
+
+	# Sem granadas
+	if Input.is_action_just_pressed("secondary_action") and $Arma.granadas == $Arma.VAZIO:
 		print("Sem granadas!!")
 	
+	# Interação para reabastecer municao primaria e secundária
 	if Input.is_action_just_pressed("interact"):
-		granadas = NUM_GRANADAS
-		municao = 10
-		municao_total = MUNICAO_LASER + 10
-		print("Munições e granadas abastecidas!!")
+		$Arma.interacao()
