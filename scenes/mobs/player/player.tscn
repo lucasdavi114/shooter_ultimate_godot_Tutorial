@@ -1,16 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3hboqlqfxcdd"]
+[gd_scene load_steps=6 format=3 uid="uid://c3hboqlqfxcdd"]
 
 [ext_resource type="Script" path="res://scenes/mobs/player/player.gd" id="1_fq36g"]
 [ext_resource type="Texture2D" uid="uid://2n5mfldwcme8" path="res://graphics/player/player.png" id="1_s0i7b"]
 [ext_resource type="Script" path="res://scenes/mobs/player/arma.gd" id="3_viejs"]
+[ext_resource type="Texture2D" uid="uid://bcokuscsiyw72" path="res://graphics/projectiles/blue.png" id="4_gfror"]
 
-[node name="Player" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_3y35k"]
+radius = 59.0
+
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_fq36g")
 
 [node name="PlayerTexture" type="Sprite2D" parent="."]
+position = Vector2(0, -37.5)
 texture = ExtResource("1_s0i7b")
 
 [node name="Arma" type="Node2D" parent="."]
+position = Vector2(0, -37.5)
 script = ExtResource("3_viejs")
 
 [node name="Laser" type="Sprite2D" parent="Arma"]
+texture = ExtResource("4_gfror")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3y35k")
+
+[node name="TimerLaser" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="TimerGranadas" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="TimerLaser" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerGranadas" to="." method="_on_timer_granadas_timeout"]

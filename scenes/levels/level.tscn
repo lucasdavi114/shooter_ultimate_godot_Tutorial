@@ -1,10 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2jtyd4e8f6kt"]
+[gd_scene load_steps=5 format=3 uid="uid://d2jtyd4e8f6kt"]
 
 [ext_resource type="PackedScene" uid="uid://c3hboqlqfxcdd" path="res://scenes/mobs/player/player.tscn" id="1_h4ino"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_hrbbt"]
+[ext_resource type="PackedScene" uid="uid://b1xby7p5xk171" path="res://scenes/objetos/gate.tscn" id="3_bp47m"]
+[ext_resource type="PackedScene" uid="uid://cru1wc64g8mt1" path="res://scenes/mobs/enemies/drone.tscn" id="5_vgq2i"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hrbbt")
 
+[node name="Gate" parent="." instance=ExtResource("3_bp47m")]
+position = Vector2(542, -649)
+
 [node name="Player" parent="." instance=ExtResource("1_h4ino")]
-position = Vector2(584, 307)
+position = Vector2(401, 464)
+
+[node name="Drone" parent="." instance=ExtResource("5_vgq2i")]
+position = Vector2(225, 238)
+
+[connection signal="Player_Entrou_na_Area" from="Gate" to="." method="_on_gate_player_entrou_na_area"]
+[connection signal="Player_Saiu_Da_Area" from="Gate" to="." method="_on_gate_player_saiu_da_area"]
+[connection signal="granada" from="Player" to="." method="_on_player_granada"]
+[connection signal="laser" from="Player" to="." method="_on_player_laser"]

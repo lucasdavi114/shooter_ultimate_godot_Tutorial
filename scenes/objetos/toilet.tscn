@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ins8odi2wlwk"]
+
+[ext_resource type="Texture2D" uid="uid://o0janxmy2ggy" path="res://graphics/objects/toilet.png" id="1_fq7d1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fpcst"]
+radius = 52.0384
+
+[node name="Toilet" type="StaticBody2D"]
+
+[node name="ToiletSprite" type="Sprite2D" parent="."]
+position = Vector2(0, 4)
+scale = Vector2(0.535, 0.535)
+texture = ExtResource("1_fq7d1")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fpcst")
