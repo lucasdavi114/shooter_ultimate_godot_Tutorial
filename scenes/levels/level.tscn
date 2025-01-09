@@ -219,12 +219,12 @@ tile_set = SubResource("TileSet_trmx5")
 [node name="Gate" parent="." instance=ExtResource("3_bp47m")]
 position = Vector2(542, -649)
 
-[node name="InstanciasDeProjeteis" type="Node2D" parent="."]
-
 [node name="House" parent="." instance=ExtResource("19_x33j6")]
 position = Vector2(-1487, 1866)
 rotation = -2.03703
 scale = Vector2(0.538667, 0.541183)
+
+[node name="InstanciasDeProjeteis" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_h4ino")]
 position = Vector2(398, 464)
