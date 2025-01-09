@@ -1,0 +1,268 @@
+[gd_scene load_steps=21 format=4 uid="uid://clocf6jnnxr87"]
+
+[ext_resource type="Texture2D" uid="uid://djfq3s52kwwu0" path="res://graphics/tilesets/interior.png" id="1_i1ixg"]
+[ext_resource type="Texture2D" uid="uid://ckjnywkrj3o30" path="res://graphics/objects/door.png" id="3_bfav6"]
+[ext_resource type="Texture2D" uid="uid://o0janxmy2ggy" path="res://graphics/objects/toilet.png" id="3_vtsbp"]
+[ext_resource type="Texture2D" uid="uid://lniud42bplt" path="res://graphics/objects/lid.png" id="4_skc7s"]
+[ext_resource type="PackedScene" uid="uid://dfo23o4421y23" path="res://scenes/objetos/bed.tscn" id="5_oilfw"]
+[ext_resource type="Texture2D" uid="uid://dq62j5q4qbg" path="res://graphics/objects/ventilation_surface.png" id="6_txcie"]
+[ext_resource type="Texture2D" uid="uid://ckvju1yqe6mhm" path="res://graphics/objects/ventilation_surface_small.png" id="7_ak0xo"]
+[ext_resource type="Texture2D" uid="uid://bho3qkcput1k5" path="res://graphics/objects/wall_lamp.png" id="8_wqfx4"]
+[ext_resource type="Texture2D" uid="uid://cf8aui00a2brg" path="res://graphics/objects/light.png" id="9_xvurg"]
+[ext_resource type="Texture2D" uid="uid://c50hjxbr527nn" path="res://graphics/objects/electric_hole.png" id="10_r3irs"]
+[ext_resource type="Texture2D" uid="uid://dcbldfrgc63gm" path="res://graphics/objects/Box.png" id="11_28f1u"]
+[ext_resource type="Texture2D" uid="uid://kbm5nn1s7s20" path="res://graphics/objects/Billboard.png" id="12_hbbdj"]
+[ext_resource type="Texture2D" uid="uid://cp7k5qtl2dudo" path="res://graphics/objects/base.png" id="13_vvhvk"]
+[ext_resource type="Texture2D" uid="uid://qq1bsniq1bb" path="res://graphics/objects/electric_box.png" id="14_ci7bs"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ar2b1"]
+texture = ExtResource("1_i1ixg")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+6:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+3:6/0 = 0
+5:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+6:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+5:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2y3k4"]
+tile_size = Vector2i(390, 390)
+sources/1 = SubResource("TileSetAtlasSource_ar2b1")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtp8k"]
+texture = ExtResource("1_i1ixg")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+6:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+3:6/0 = 0
+5:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+6:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+5:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_f6h8j"]
+tile_size = Vector2i(390, 390)
+sources/0 = SubResource("TileSetAtlasSource_wtp8k")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uoke6"]
+texture = ExtResource("1_i1ixg")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+6:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+3:6/0 = 0
+5:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+6:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+5:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qa74i"]
+tile_size = Vector2i(390, 390)
+sources/1 = SubResource("TileSetAtlasSource_uoke6")
+
+[node name="House" type="Area2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-817, -2217, 1201, -2215, 1270, -2201, 1340, -2162, 1391, -2105, 1421, -2043, 1433, -1979, 1431, -761, 1467, -687, 1539, -655, 1999, -655, 2103, -615, 2159, -567, 2195, -503, 2215, -435, 2210, 1246, 2173, 1325, 2129, 1375, 2067, 1413, 1993, 1433, -1601, 1435, -1679, 1415, -1753, 1362, -1800, 1297, -1824, 1218, -1820, -463, -1787, -535, -1737, -595, -1676, -633, -1599, -653, -1127, -659, -1074, -698, -1045, -774, -1042, -2008, -1019, -2085, -973, -2147, -903, -2191)
+
+[node name="House" type="Node2D" parent="."]
+
+[node name="Ground" type="TileMapLayer" parent="House"]
+tile_map_data = PackedByteArray("AAACAAAAAQABAAEAAAACAAEAAQABAAEAAAACAAIAAQABAAEAAAABAAIAAQABAAEAAAAAAAIAAQABAAEAAAD//wIAAQABAAEAAAD+/wIAAQABAAEAAAD+/wEAAQABAAEAAAD+/wAAAQABAAEAAAD/////AQABAAEAAAAAAP//AQABAAEAAAABAP//AQABAAEAAAD+////AQABAAEAAAACAP//AQABAAEAAAD//wAAAQABAAEAAAAAAAAAAQABAAEAAAABAAAAAQABAAEAAAABAAEAAQABAAEAAAAAAAEAAQABAAEAAAD//wEAAQABAAEAAAADAAAAAQABAAEAAAADAAEAAQABAAEAAAAAAP7/AQABAAEAAAD///3/AQABAAEAAAAAAP3/AQABAAEAAAABAP3/AQABAAEAAAD9/wAAAQABAAEAAAD9/wEAAQABAAEAAAD9////AQABAAEAAAD8/wAAAQABAAEAAAD8/wEAAQABAAEAAAD8////AQABAAEAAAD8/wIAAQABAAEAAAD9/wIAAQABAAEAAAAEAP//AQABAAEAAAAEAAAAAQABAAEAAAAEAAEAAQABAAEAAAAEAAIAAQABAAEAAAADAAIAAQABAAEAAAADAP//AQABAAEAAAD///7/AQABAAEAAAABAP7/AQABAAEAAAACAP3/AQABAAEAAAACAP7/AQABAAEAAAD+//3/AQABAAEAAAD+//7/AQABAAEAAAD///z/AQABAAEAAAAAAPz/AQABAAEAAAABAPz/AQABAAEAAAD+//v/AQABAAEAAAD+//z/AQABAAEAAAACAPv/AQABAAEAAAACAPz/AQABAAEAAAD///v/AQABAAEAAAAAAPv/AQABAAEAAAABAPv/AQABAAEAAAAFAAIAAQACAAEAAAAFAAEAAQACAAEAAAAFAAAAAQACAAEAAAAFAP//AQACAAEAAAADAP3/AQACAAEAAAADAPz/AQACAAEAAAADAPv/AQACAAEAAAD9//v/AQAAAAEAAAD9//z/AQAAAAEAAAD9//3/AQAAAAEAAAD9//7/AQABAAUAAAD7////AQAAAAEAAAD7/wAAAQAAAAEAAAD7/wEAAQAAAAEAAAD7/wIAAQAAAAEAAAD8/wMAAQABAAIAAAD9/wMAAQACAAQAAAD+/wMAAQACAAQAAAD//wMAAQABAAIAAAAAAAMAAQABAAIAAAABAAMAAQABAAIAAAACAAMAAQABAAIAAAADAAMAAQABAAIAAAAEAAMAAQABAAIAAAADAP7/AQAAAAUAAAD8//7/AQABAAAAAAD7//7/AQAAAAAAAAAFAP7/AQACAAAAAAAFAAMAAQACAAIAAAD7/wMAAQAAAAIAAAAEAP7/AQABAAAAAAD9//r/AQAAAAAAAAD+//r/AQABAAAAAAD///r/AQABAAAAAAABAPr/AQABAAAAAAACAPr/AQABAAAAAAADAPr/AQACAAAAAAAAAPr/AQABAAAAAAA=")
+tile_set = SubResource("TileSet_2y3k4")
+
+[node name="Walls" type="TileMapLayer" parent="House"]
+tile_map_data = PackedByteArray("AAD8////AAAAAAcAAAAEAAIAAAABAAgAAAAEAP//AAABAAcAAAD8/wIAAAAAAAgAAAACAAIAAAADAAgAAAACAAEAAAABAAYAAAD9////AAAAAAYAAAD+////AAAAAAYAAAD/////AAABAAgAAAABAP//AAAAAAgAAAACAP//AAACAAcAAAADAP//AAAAAAYAAAD8/wAAAAABAAYAAAD8/wEAAAABAAYAAAD+/wIAAAAAAAYAAAD//wIAAAAAAAYAAAAAAAIAAAAAAAYAAAABAAIAAAAAAAYAAAAEAAEAAAABAAYAAAAEAAAAAAABAAYAAAADAAIAAAAAAAYAAAD///7/AAACAAcAAAABAP7/AAACAAcAAAACAP7/AAABAAgAAAD+//7/AAAAAAgAAAD+//3/AAABAAYAAAD+//z/AAABAAYAAAD+//v/AAAAAAcAAAACAPv/AAABAAcAAAD///v/AAAAAAYAAAAAAPv/AAAAAAYAAAABAPv/AAAAAAYAAAACAPz/AAABAAYAAAACAP3/AAABAAYAAAA=")
+tile_set = SubResource("TileSet_f6h8j")
+
+[node name="OuterWalls" type="TileMapLayer" parent="House"]
+tile_map_data = PackedByteArray("AAAFAAIAAQAFAAEAAAAFAAEAAQAFAAEAAAAFAAAAAQAFAAEAAAAFAP//AQAFAAEAAAADAP3/AQAFAAEAAAADAPz/AQAFAAEAAAADAPv/AQAFAAEAAAACAPr/AQAEAAAAAAABAPr/AQAEAAAAAAAAAPr/AQAEAAAAAAD///r/AQAEAAAAAAD+//r/AQAEAAAAAAD8//7/AQAEAAAAAAD7/wAAAQADAAEAAAD7/wEAAQADAAEAAAD7////AQADAAEAAAD7/wIAAQADAAEAAAD9//3/AQADAAEAAAD9//z/AQADAAEAAAD9//v/AQADAAEAAAD9//r/AQADAAAAAAD7//7/AQADAAAAAAD9//7/AQAFAAIAAAADAP7/AQADAAIAAAADAPr/AQAFAAAAAAAEAP7/AQAEAAAAAAAFAP7/AQAFAAAAAAD7/wMAAQADAAIAAAD8/wMAAQAEAAAAAAD9/wMAAQAGAAMAAAD+/wMAAQAGAAQAAAD//wMAAQAEAAIAAAAAAAMAAQAEAAIAAAABAAMAAQAEAAIAAAACAAMAAQAEAAIAAAADAAMAAQAEAAIAAAAEAAMAAQAEAAIAAAAFAAMAAQAFAAIAAAA=")
+tile_set = SubResource("TileSet_qa74i")
+
+[node name="Door" type="Sprite2D" parent="House"]
+position = Vector2(199, -586)
+texture = ExtResource("3_bfav6")
+
+[node name="Toilet" type="Sprite2D" parent="House"]
+position = Vector2(1128, 533)
+rotation = -1.57133
+texture = ExtResource("3_vtsbp")
+
+[node name="Lid" type="Sprite2D" parent="House"]
+position = Vector2(1156, 527)
+rotation = -1.5708
+texture = ExtResource("4_skc7s")
+
+[node name="Door2" type="Sprite2D" parent="House"]
+position = Vector2(974, 191)
+rotation = 1.5708
+texture = ExtResource("3_bfav6")
+
+[node name="Bed" parent="House" instance=ExtResource("5_oilfw")]
+position = Vector2(-427, -1484)
+scale = Vector2(1.33346, 1.32893)
+
+[node name="VentilationSurface" type="Sprite2D" parent="House"]
+position = Vector2(-1252, -88)
+texture = ExtResource("6_txcie")
+
+[node name="VentilationSurfaceSmall" type="Sprite2D" parent="House"]
+position = Vector2(1372, 897)
+texture = ExtResource("7_ak0xo")
+
+[node name="VentilationSurface2" type="Sprite2D" parent="House"]
+position = Vector2(859, -1631)
+texture = ExtResource("6_txcie")
+
+[node name="WallLamp" type="Sprite2D" parent="House"]
+position = Vector2(-221, -1818)
+rotation = 3.14159
+texture = ExtResource("8_wqfx4")
+
+[node name="Light" type="Sprite2D" parent="House"]
+position = Vector2(-188, -622)
+texture = ExtResource("9_xvurg")
+
+[node name="ElectricHole" type="Sprite2D" parent="House"]
+position = Vector2(-1249, 863)
+texture = ExtResource("10_r3irs")
+
+[node name="Box" type="Sprite2D" parent="House"]
+position = Vector2(-1204, 356)
+rotation = -1.5708
+texture = ExtResource("11_28f1u")
+
+[node name="Billboard" type="Sprite2D" parent="House"]
+position = Vector2(-15, 897)
+texture = ExtResource("12_hbbdj")
+
+[node name="Base" type="Sprite2D" parent="House"]
+position = Vector2(-28, 611)
+scale = Vector2(1.42574, 1.58607)
+texture = ExtResource("13_vvhvk")
+
+[node name="ElectricBox" type="Sprite2D" parent="House"]
+position = Vector2(782, -735)
+texture = ExtResource("14_ci7bs")
+
+[node name="Light2" type="Sprite2D" parent="House/ElectricBox"]
+position = Vector2(-240, 116)
+texture = ExtResource("9_xvurg")
+
+[node name="Door3" type="Sprite2D" parent="House"]
+position = Vector2(-972, 978)
+texture = ExtResource("3_bfav6")
