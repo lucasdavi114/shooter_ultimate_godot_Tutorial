@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://djfq3s52kwwu0" path="res://graphics/tilesets/interior.png" id="1_i1ixg"]
 [ext_resource type="Texture2D" uid="uid://ckjnywkrj3o30" path="res://graphics/objects/door.png" id="3_bfav6"]
-[ext_resource type="Texture2D" uid="uid://o0janxmy2ggy" path="res://graphics/objects/toilet.png" id="3_vtsbp"]
 [ext_resource type="Texture2D" uid="uid://lniud42bplt" path="res://graphics/objects/lid.png" id="4_skc7s"]
 [ext_resource type="PackedScene" uid="uid://dfo23o4421y23" path="res://scenes/objetos/bed.tscn" id="5_oilfw"]
 [ext_resource type="Texture2D" uid="uid://dq62j5q4qbg" path="res://graphics/objects/ventilation_surface.png" id="6_txcie"]
@@ -12,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c50hjxbr527nn" path="res://graphics/objects/electric_hole.png" id="10_r3irs"]
 [ext_resource type="Texture2D" uid="uid://dcbldfrgc63gm" path="res://graphics/objects/Box.png" id="11_28f1u"]
 [ext_resource type="Texture2D" uid="uid://kbm5nn1s7s20" path="res://graphics/objects/Billboard.png" id="12_hbbdj"]
+[ext_resource type="PackedScene" uid="uid://ins8odi2wlwk" path="res://scenes/objetos/toilet.tscn" id="13_2tw53"]
 [ext_resource type="Texture2D" uid="uid://cp7k5qtl2dudo" path="res://graphics/objects/base.png" id="13_vvhvk"]
 [ext_resource type="Texture2D" uid="uid://qq1bsniq1bb" path="res://graphics/objects/electric_box.png" id="14_ci7bs"]
 
@@ -175,6 +175,7 @@ tile_size = Vector2i(390, 390)
 sources/1 = SubResource("TileSetAtlasSource_uoke6")
 
 [node name="House" type="Area2D"]
+collision_layer = 16
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-817, -2217, 1201, -2215, 1270, -2201, 1340, -2162, 1391, -2105, 1421, -2043, 1433, -1979, 1431, -761, 1467, -687, 1539, -655, 1999, -655, 2103, -615, 2159, -567, 2195, -503, 2215, -435, 2210, 1246, 2173, 1325, 2129, 1375, 2067, 1413, 1993, 1433, -1601, 1435, -1679, 1415, -1753, 1362, -1800, 1297, -1824, 1218, -1820, -463, -1787, -535, -1737, -595, -1676, -633, -1599, -653, -1127, -659, -1074, -698, -1045, -774, -1042, -2008, -1019, -2085, -973, -2147, -903, -2191)
@@ -196,16 +197,6 @@ tile_set = SubResource("TileSet_qa74i")
 [node name="Door" type="Sprite2D" parent="House"]
 position = Vector2(199, -586)
 texture = ExtResource("3_bfav6")
-
-[node name="Toilet" type="Sprite2D" parent="House"]
-position = Vector2(1128, 533)
-rotation = -1.57133
-texture = ExtResource("3_vtsbp")
-
-[node name="Lid" type="Sprite2D" parent="House"]
-position = Vector2(1156, 527)
-rotation = -1.5708
-texture = ExtResource("4_skc7s")
 
 [node name="Door2" type="Sprite2D" parent="House"]
 position = Vector2(974, 191)
@@ -266,3 +257,14 @@ texture = ExtResource("9_xvurg")
 [node name="Door3" type="Sprite2D" parent="House"]
 position = Vector2(-972, 978)
 texture = ExtResource("3_bfav6")
+
+[node name="Toilet" parent="House" instance=ExtResource("13_2tw53")]
+position = Vector2(1106, 511)
+rotation = -1.57079
+scale = Vector2(-1.8306, 1.82567)
+
+[node name="Lid" type="Sprite2D" parent="House"]
+position = Vector2(1141, 512)
+rotation = -1.57079
+scale = Vector2(0.887668, 0.99599)
+texture = ExtResource("4_skc7s")

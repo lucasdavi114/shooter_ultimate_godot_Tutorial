@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://ins8odi2wlwk"]
+[gd_scene load_steps=2 format=3 uid="uid://ins8odi2wlwk"]
 
 [ext_resource type="Texture2D" uid="uid://o0janxmy2ggy" path="res://graphics/objects/toilet.png" id="1_fq7d1"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fpcst"]
-radius = 52.0384
-
 [node name="Toilet" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 11
 
 [node name="ToiletSprite" type="Sprite2D" parent="."]
 position = Vector2(0, 4)
 scale = Vector2(0.535, 0.535)
 texture = ExtResource("1_fq7d1")
 
-[node name="Collision" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_fpcst")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(6.15076, 6.99275)
+polygon = PackedVector2Array(-7.96649, -3.57513, -8.7794, -2.28808, -8.7794, -0.572021, -8.61681, 1.00104, -8.45423, 2.00207, -7.96649, 3.00311, -7.31616, 4.29016, -6.50326, 5.4342, -5.69035, 6.43523, -4.71486, 7.57928, -3.73937, 8.43731, -2.27614, 9.43834, -1.30065, 9.86736, 0, 10.1534, 1.30065, 9.86736, 2.6013, 9.29534, 5.04002, 7.29326, 6.82842, 5.00518, 7.64133, 3.71813, 8.29165, 2.43109, 8.61681, 1.00104, 8.7794, -0.858031, 8.61681, -2.7171, 7.80391, -3.86114, 7.96649, -4.14715, 8.61681, -3.86114, 9.26714, -3.86114, 10.08, -4.57617, 10.2426, -5.14819, 10.2426, -6.29223, 10.2426, -7.29326, 9.42972, -8.00829, 8.45423, -8.43731, 7.64133, -8.1513, 7.80391, -8.86632, -7.96649, -8.86632, -7.80391, -8.2943, -8.12907, -8.43731, -9.26714, -8.00829, -10.08, -7.29326, -10.08, -4.86218, -9.91747, -4.43316, -9.42972, -4.14715, -8.61681, -3.86114, -7.96649, -4.00415)

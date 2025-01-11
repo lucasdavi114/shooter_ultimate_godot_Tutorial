@@ -218,6 +218,7 @@ tile_set = SubResource("TileSet_trmx5")
 
 [node name="Gate" parent="." instance=ExtResource("3_bp47m")]
 position = Vector2(542, -649)
+collision_layer = 4
 
 [node name="House" parent="." instance=ExtResource("19_x33j6")]
 position = Vector2(-1487, 1866)

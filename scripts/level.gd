@@ -3,12 +3,14 @@ extends Node2D
 var laser_scene: PackedScene = preload("res://scenes/projeteis/laser.tscn")
 var granada_scene: PackedScene = preload("res://scenes/projeteis/granada.tscn")
 
-func _on_gate_player_entrou_na_area(_body) -> void:
+func _on_gate_player_entrou_na_area(body) -> void:
 	print("Player entrou na Área!!")
+	print(body)
 
 
-func _on_gate_player_saiu_da_area(_body) -> void:
+func _on_gate_player_saiu_da_area(body) -> void:
 	print("Player saiu da Área!!")
+	print(body)
 
 
 func _on_player_laser(posicao_saida_laser, direction) -> void:
