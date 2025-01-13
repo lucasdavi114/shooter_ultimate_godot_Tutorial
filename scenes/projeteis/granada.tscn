@@ -16,6 +16,7 @@ collision_mask = 15
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_p0ukt")
 gravity_scale = 0.0
+freeze_mode = 1
 linear_damp = 1.6
 script = ExtResource("1_8w80h")
 
