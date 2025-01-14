@@ -36,7 +36,7 @@ func _process(_delta: float) -> void:
 		var marcador_selecionado = $SaidaProjeteis.get_children()
 		
 		var posicao_saida_laser = marcador_selecionado[randi() % marcador_selecionado.size()]
-		
+		$GPUParticles2D.emitting = true
 		disparo()
 		hud_arma()
 		

@@ -22,8 +22,8 @@ curve = SubResource("Curve_ryaqh")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m6fg5"]
 particle_flag_disable_z = true
 emission_shape = 1
-emission_sphere_radius = 30.0
-gravity = Vector3(100, -150, 0)
+emission_sphere_radius = 59.09
+gravity = Vector3(100, -120, 0)
 scale_min = 0.0
 scale_max = 3.0
 scale_curve = SubResource("CurveTexture_byvj8")
