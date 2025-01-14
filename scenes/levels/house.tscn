@@ -7,13 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://dq62j5q4qbg" path="res://graphics/objects/ventilation_surface.png" id="6_txcie"]
 [ext_resource type="Texture2D" uid="uid://ckvju1yqe6mhm" path="res://graphics/objects/ventilation_surface_small.png" id="7_ak0xo"]
 [ext_resource type="Texture2D" uid="uid://bho3qkcput1k5" path="res://graphics/objects/wall_lamp.png" id="8_wqfx4"]
-[ext_resource type="Texture2D" uid="uid://cf8aui00a2brg" path="res://graphics/objects/light.png" id="9_xvurg"]
 [ext_resource type="Texture2D" uid="uid://c50hjxbr527nn" path="res://graphics/objects/electric_hole.png" id="10_r3irs"]
 [ext_resource type="Texture2D" uid="uid://dcbldfrgc63gm" path="res://graphics/objects/Box.png" id="11_28f1u"]
 [ext_resource type="Texture2D" uid="uid://kbm5nn1s7s20" path="res://graphics/objects/Billboard.png" id="12_hbbdj"]
 [ext_resource type="PackedScene" uid="uid://ins8odi2wlwk" path="res://scenes/objetos/toilet.tscn" id="13_2tw53"]
 [ext_resource type="Texture2D" uid="uid://cp7k5qtl2dudo" path="res://graphics/objects/base.png" id="13_vvhvk"]
 [ext_resource type="Texture2D" uid="uid://qq1bsniq1bb" path="res://graphics/objects/electric_box.png" id="14_ci7bs"]
+[ext_resource type="PackedScene" uid="uid://brcckglkoct8d" path="res://scenes/objetos/simple_light.tscn" id="15_j5b8t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ar2b1"]
 texture = ExtResource("1_i1ixg")
@@ -261,10 +261,6 @@ position = Vector2(-221, -1818)
 rotation = 3.14159
 texture = ExtResource("8_wqfx4")
 
-[node name="Light" type="Sprite2D" parent="House"]
-position = Vector2(-188, -622)
-texture = ExtResource("9_xvurg")
-
 [node name="ElectricHole" type="Sprite2D" parent="House"]
 position = Vector2(-1249, 863)
 texture = ExtResource("10_r3irs")
@@ -287,10 +283,6 @@ texture = ExtResource("13_vvhvk")
 position = Vector2(782, -735)
 texture = ExtResource("14_ci7bs")
 
-[node name="Light2" type="Sprite2D" parent="House/ElectricBox"]
-position = Vector2(-240, 116)
-texture = ExtResource("9_xvurg")
-
 [node name="Door3" type="Sprite2D" parent="House"]
 position = Vector2(-972, 978)
 texture = ExtResource("3_bfav6")
@@ -305,3 +297,21 @@ position = Vector2(1141, 512)
 rotation = -1.57079
 scale = Vector2(0.887668, 0.99599)
 texture = ExtResource("4_skc7s")
+
+[node name="SimpleLight" parent="." instance=ExtResource("15_j5b8t")]
+position = Vector2(-556, -1117)
+rotation = -1.5708
+
+[node name="SimpleLight2" parent="." instance=ExtResource("15_j5b8t")]
+position = Vector2(954, -1117)
+rotation = 1.5708
+
+[node name="SimpleLight3" parent="." instance=ExtResource("15_j5b8t")]
+position = Vector2(1724, 466)
+rotation = 1.5708
+
+[node name="SimpleLight4" parent="." instance=ExtResource("15_j5b8t")]
+position = Vector2(-486, -166)
+
+[node name="SimpleLight5" parent="." instance=ExtResource("15_j5b8t")]
+position = Vector2(765, -166)
