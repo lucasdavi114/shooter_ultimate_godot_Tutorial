@@ -24,8 +24,8 @@ color_ramp = SubResource("GradientTexture1D_iimc0")
 [sub_resource type="CircleShape2D" id="CircleShape2D_3y35k"]
 radius = 59.0
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_agn0t"]
-polygon = PackedVector2Array(12, -59, 5, -59, -1, -59, -7, -56, -11, -56, -16, -56, -21, -53, -24, -51, -26, -47, -31, -47, -38, -46, -43, -44, -46, -40, -49, -37, -51, -32, -52, -29, -55, -25, -58, -18, -58, -9, -58, -5, -57, 1, -57, 6, -55, 10, -52, 14, -49, 15, -49, 19, -50, 22, -48, 27, -45, 30, -42, 33, -40, 37, -36, 44, -34, 47, -33, 52, -31, 55, -28, 57, -23, 59, -18, 60, -15, 58, -11, 57, -7, 55, -3, 45, 1, 34, -1, 26, 0, 19, 1, 13, -4, 10, -11, 4, -14, -7, -9, -40, -4, -45, 4, -51, 10, -54, 19, -58)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xx6r5"]
+polygon = PackedVector2Array(-7, -56, 3, -59, 10, -59, 14, -58, 21, -60, 25, -60, 30, -58, 34, -53, 37, -49, 39, -47, 45, -42, 46, -39, 46, -37, 49, -31, 51, -28, 57, -28, 63, -25, 75, -13, 78, -10, 80, -9, 86, -10, 90, -10, 96, -7, 99, -4, 107, -3, 112, -1, 113, 2, 120, 3, 125, 3, 126, 5, 125, 7, 124, 9, 126, 9, 129, 7, 131, 7, 134, 10, 135, 15, 135, 25, 134, 28, 133, 31, 131, 33, 128, 33, 126, 32, 125, 31, 123, 31, 122, 33, 124, 34, 124, 36, 124, 37, 119, 37, 115, 37, 113, 36, 111, 35, 109, 36, 106, 40, 102, 44, 98, 44, 98, 50, 96, 53, 65, 53, 62, 51, 61, 48, 61, 44, 65, 42, 64, 41, 46, 41, 44, 40, 40, 43, 32, 46, 27, 47, 23, 49, 16, 54, 8, 58, 1, 59, -4, 59, -9, 61, -16, 61, -23, 60, -29, 57, -33, 53, -35, 47, -35, 45, -38, 41, -41, 35, -44, 32, -49, 26, -50, 20, -49, 19, -49, 16, -53, 12, -57, 5, -58, -4, -58, -14, -57, -22, -52, -29, -50, -35, -46, -41, -40, -45, -35, -47, -30, -47, -28, -45, -25, -47, -25, -51, -18, -54, -13, -56, -11, -56, -10, -53)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 63
@@ -67,7 +67,7 @@ position = Vector2(133, 20)
 position = Vector2(129, 29)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_agn0t")
+occluder = SubResource("OccluderPolygon2D_xx6r5")
 
 [connection signal="timeout" from="TimerLaser" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TimerGranadas" to="." method="_on_timer_granadas_timeout"]

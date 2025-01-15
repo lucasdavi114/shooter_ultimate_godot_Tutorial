@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmsjskpxatq5w"]
+[gd_scene load_steps=6 format=3 uid="uid://cmsjskpxatq5w"]
 
 [ext_resource type="Script" path="res://scenes/projeteis/granada.gd" id="1_8w80h"]
 [ext_resource type="Texture2D" uid="uid://brfahd2p8dbqn" path="res://graphics/projectiles/grenade.png" id="1_wwmnd"]
@@ -9,6 +9,9 @@ bounce = 0.4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iwsd3"]
 radius = 23.0868
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_68vn5"]
+polygon = PackedVector2Array(-14, -18, -14, -19, -14, -20, -11, -22, -10, -21, -8, -21, -6, -22, -3, -22, 1, -22, 4, -22, 7, -21, 10, -20, 14, -17, 17, -14, 20, -10, 21, -10, 22, -10, 23, -9, 23, -7, 23, -6, 22, -5, 22, -4, 23, -1, 23, 3, 22, 7, 20, 11, 17, 15, 13, 19, 13, 20, 11, 21, 7, 22, 6, 21, 3, 22, -5, 22, -12, 19, -16, 16, -19, 12, -20, 13, -23, 7, -22, 6, -23, 1, -23, -5, -20, -11, -18, -14, -16, -16)
 
 [node name="Granada" type="RigidBody2D"]
 collision_layer = 8
@@ -26,3 +29,6 @@ texture = ExtResource("1_wwmnd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_iwsd3")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_68vn5")
