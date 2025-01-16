@@ -42,11 +42,6 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3y35k")
 
-[node name="PlayerTexture" type="Sprite2D" parent="."]
-position = Vector2(39, 1)
-rotation = 1.5708
-texture = ExtResource("1_s0i7b")
-
 [node name="TimerLaser" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
@@ -68,6 +63,11 @@ position = Vector2(129, 29)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_xx6r5")
+
+[node name="PlayerTexture" type="Sprite2D" parent="."]
+position = Vector2(39, 1)
+rotation = 1.5708
+texture = ExtResource("1_s0i7b")
 
 [connection signal="timeout" from="TimerLaser" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TimerGranadas" to="." method="_on_timer_granadas_timeout"]

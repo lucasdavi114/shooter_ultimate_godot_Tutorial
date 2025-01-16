@@ -1,17 +1,8 @@
-[gd_scene load_steps=44 format=4 uid="uid://clocf6jnnxr87"]
+[gd_scene load_steps=35 format=4 uid="uid://clocf6jnnxr87"]
 
 [ext_resource type="Texture2D" uid="uid://djfq3s52kwwu0" path="res://graphics/tilesets/interior.png" id="1_i1ixg"]
-[ext_resource type="Texture2D" uid="uid://ckjnywkrj3o30" path="res://graphics/objects/door.png" id="3_bfav6"]
-[ext_resource type="Texture2D" uid="uid://lniud42bplt" path="res://graphics/objects/lid.png" id="4_skc7s"]
 [ext_resource type="PackedScene" uid="uid://dfo23o4421y23" path="res://scenes/objetos/bed.tscn" id="5_oilfw"]
-[ext_resource type="Texture2D" uid="uid://dq62j5q4qbg" path="res://graphics/objects/ventilation_surface.png" id="6_txcie"]
-[ext_resource type="Texture2D" uid="uid://ckvju1yqe6mhm" path="res://graphics/objects/ventilation_surface_small.png" id="7_ak0xo"]
-[ext_resource type="Texture2D" uid="uid://c50hjxbr527nn" path="res://graphics/objects/electric_hole.png" id="10_r3irs"]
-[ext_resource type="Texture2D" uid="uid://dcbldfrgc63gm" path="res://graphics/objects/Box.png" id="11_28f1u"]
-[ext_resource type="Texture2D" uid="uid://kbm5nn1s7s20" path="res://graphics/objects/Billboard.png" id="12_hbbdj"]
 [ext_resource type="PackedScene" uid="uid://ins8odi2wlwk" path="res://scenes/objetos/toilet.tscn" id="13_2tw53"]
-[ext_resource type="Texture2D" uid="uid://cp7k5qtl2dudo" path="res://graphics/objects/base.png" id="13_vvhvk"]
-[ext_resource type="Texture2D" uid="uid://qq1bsniq1bb" path="res://graphics/objects/electric_box.png" id="14_ci7bs"]
 [ext_resource type="PackedScene" uid="uid://hmau2w7hmqgy" path="res://scenes/objetos/wall_lamp.tscn" id="15_agfi5"]
 [ext_resource type="PackedScene" uid="uid://brcckglkoct8d" path="res://scenes/objetos/simple_light.tscn" id="15_j5b8t"]
 
@@ -325,90 +316,39 @@ tile_set = SubResource("TileSet_f6h8j")
 tile_map_data = PackedByteArray("AAAFAAIAAQAFAAEAAAAFAAEAAQAFAAEAAAAFAAAAAQAFAAEAAAAFAP//AQAFAAEAAAADAP3/AQAFAAEAAAADAPz/AQAFAAEAAAADAPv/AQAFAAEAAAACAPr/AQAEAAAAAAABAPr/AQAEAAAAAAAAAPr/AQAEAAAAAAD///r/AQAEAAAAAAD+//r/AQAEAAAAAAD8//7/AQAEAAAAAAD7/wAAAQADAAEAAAD7/wEAAQADAAEAAAD7////AQADAAEAAAD7/wIAAQADAAEAAAD9//3/AQADAAEAAAD9//z/AQADAAEAAAD9//v/AQADAAEAAAD9//r/AQADAAAAAAD7//7/AQADAAAAAAD9//7/AQAFAAIAAAADAP7/AQADAAIAAAADAPr/AQAFAAAAAAAEAP7/AQAEAAAAAAAFAP7/AQAFAAAAAAD7/wMAAQADAAIAAAD8/wMAAQAEAAAAAAD9/wMAAQAGAAMAAAD+/wMAAQAGAAQAAAD//wMAAQAEAAIAAAAAAAMAAQAEAAIAAAABAAMAAQAEAAIAAAACAAMAAQAEAAIAAAADAAMAAQAEAAIAAAAEAAMAAQAEAAIAAAAFAAMAAQAFAAIAAAA=")
 tile_set = SubResource("TileSet_qa74i")
 
-[node name="Door" type="Sprite2D" parent="House"]
-position = Vector2(199, -586)
-texture = ExtResource("3_bfav6")
-
-[node name="Door2" type="Sprite2D" parent="House"]
-position = Vector2(974, 191)
-rotation = 1.5708
-texture = ExtResource("3_bfav6")
-
 [node name="Bed" parent="House" instance=ExtResource("5_oilfw")]
 position = Vector2(-427, -1484)
 scale = Vector2(1.33346, 1.32893)
-
-[node name="VentilationSurface" type="Sprite2D" parent="House"]
-position = Vector2(-1252, -88)
-texture = ExtResource("6_txcie")
-
-[node name="VentilationSurfaceSmall" type="Sprite2D" parent="House"]
-position = Vector2(1372, 897)
-texture = ExtResource("7_ak0xo")
-
-[node name="VentilationSurface2" type="Sprite2D" parent="House"]
-position = Vector2(859, -1631)
-texture = ExtResource("6_txcie")
-
-[node name="ElectricHole" type="Sprite2D" parent="House"]
-position = Vector2(-1249, 863)
-texture = ExtResource("10_r3irs")
-
-[node name="Box" type="Sprite2D" parent="House"]
-position = Vector2(-1204, 356)
-rotation = -1.5708
-texture = ExtResource("11_28f1u")
-
-[node name="Billboard" type="Sprite2D" parent="House"]
-position = Vector2(-15, 897)
-texture = ExtResource("12_hbbdj")
-
-[node name="Base" type="Sprite2D" parent="House"]
-position = Vector2(-28, 611)
-scale = Vector2(1.42574, 1.58607)
-texture = ExtResource("13_vvhvk")
-
-[node name="ElectricBox" type="Sprite2D" parent="House"]
-position = Vector2(782, -735)
-texture = ExtResource("14_ci7bs")
-
-[node name="Door3" type="Sprite2D" parent="House"]
-position = Vector2(-972, 978)
-texture = ExtResource("3_bfav6")
 
 [node name="Toilet" parent="House" instance=ExtResource("13_2tw53")]
 position = Vector2(1106, 511)
 rotation = -1.57079
 scale = Vector2(-1.8306, 1.82567)
 
-[node name="Lid" type="Sprite2D" parent="House"]
-position = Vector2(1141, 512)
-rotation = -1.57079
-scale = Vector2(0.887668, 0.99599)
-texture = ExtResource("4_skc7s")
+[node name="Lights" type="Node2D" parent="."]
 
-[node name="SimpleLight" parent="." instance=ExtResource("15_j5b8t")]
+[node name="SimpleLight" parent="Lights" instance=ExtResource("15_j5b8t")]
 position = Vector2(-556, -1117)
 rotation = -1.5708
 
-[node name="SimpleLight2" parent="." instance=ExtResource("15_j5b8t")]
+[node name="SimpleLight2" parent="Lights" instance=ExtResource("15_j5b8t")]
 position = Vector2(954, -1117)
 rotation = 1.5708
 
-[node name="SimpleLight3" parent="." instance=ExtResource("15_j5b8t")]
+[node name="SimpleLight3" parent="Lights" instance=ExtResource("15_j5b8t")]
 position = Vector2(1724, 466)
 rotation = 1.5708
 
-[node name="SimpleLight4" parent="." instance=ExtResource("15_j5b8t")]
+[node name="SimpleLight4" parent="Lights" instance=ExtResource("15_j5b8t")]
 position = Vector2(-486, -166)
 
-[node name="SimpleLight5" parent="." instance=ExtResource("15_j5b8t")]
+[node name="SimpleLight5" parent="Lights" instance=ExtResource("15_j5b8t")]
 position = Vector2(765, -166)
 
-[node name="WallLamp" parent="." instance=ExtResource("15_agfi5")]
+[node name="WallLamp" parent="Lights" instance=ExtResource("15_agfi5")]
 position = Vector2(263, 1477)
 rotation = 3.14159
 
-[node name="WallLamp2" parent="." instance=ExtResource("15_agfi5")]
+[node name="WallLamp2" parent="Lights" instance=ExtResource("15_agfi5")]
 position = Vector2(293, -1660)
 rotation = 3.14159

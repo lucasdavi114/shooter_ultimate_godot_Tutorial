@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://yg1cv2ck12e4"]
+[gd_scene load_steps=10 format=3 uid="uid://yg1cv2ck12e4"]
 
 [ext_resource type="Texture2D" uid="uid://c3imw144hkiwa" path="res://graphics/objects/ventilation_hole.png" id="1_xte6y"]
 [ext_resource type="Texture2D" uid="uid://lkudhal21w4" path="res://graphics/decals/white.png" id="2_s3i2b"]
+[ext_resource type="PackedScene" uid="uid://c6qrcogtddifr" path="res://scenes/objetos/light_fan_animation.tscn" id="3_fauxk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x7ba1"]
 radius = 87.0919
@@ -43,3 +44,6 @@ amount = 300
 process_material = SubResource("ParticleProcessMaterial_m6fg5")
 texture = ExtResource("2_s3i2b")
 lifetime = 1.5
+
+[node name="LightFanAnimation" parent="." instance=ExtResource("3_fauxk")]
+scale = Vector2(0.392631, 0.417505)
