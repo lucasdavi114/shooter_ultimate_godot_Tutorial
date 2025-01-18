@@ -44,7 +44,6 @@ func _process(_delta: float) -> void:
 		
 		$TimerLaser.start()
 		
-		
 		# Emite o laser com a posicao de saida dele
 		laser.emit(posicao_saida_laser.global_position, direction)
 		
