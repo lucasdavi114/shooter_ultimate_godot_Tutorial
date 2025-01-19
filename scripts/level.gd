@@ -1,16 +1,9 @@
 extends Node2D
+class_name LevelParent
 
 var laser_scene: PackedScene = preload("res://scenes/projeteis/laser.tscn")
 var granada_scene: PackedScene = preload("res://scenes/projeteis/granada.tscn")
 
-func _on_gate_player_entrou_na_area(body) -> void:
-	print("Player entrou na Área!!")
-	print(body)
-
-
-func _on_gate_player_saiu_da_area(body) -> void:
-	print("Player saiu da Área!!")
-	print(body)
 
 
 func _on_player_laser(posicao_saida_laser, direction) -> void:
@@ -34,3 +27,16 @@ func _on_player_granada(posicao_saida_granada, direction) -> void:
 	granada.linear_velocity = direction * granada.speed
 	
 	$InstanciasDeProjeteis.add_child(granada)
+
+
+func _on_house_player_entrou(_body: CharacterBody2D) -> void:
+	
+	var tween = get_tree().create_tween()
+	
+	tween.tween_property($Player/Camera2D, "zoom", Vector2(1, 1), 1)
+
+
+func _on_house_player_saiu(_body: CharacterBody2D) -> void:
+	var tween = get_tree().create_tween()
+	
+	tween.tween_property($Player/Camera2D, "zoom", Vector2(0.6, 0.6), 1)

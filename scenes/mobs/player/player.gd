@@ -3,7 +3,8 @@ extends CharacterBody2D
 var municao: int = 25
 var granadas: int = 5
 
-var velocidade: int = 400
+@export var max_velocidade: int = 400
+var velocidade: int = max_velocidade
 var pode_atirar: bool = true
 var pode_lancar_granada: bool = true
 
@@ -44,6 +45,7 @@ func _process(_delta: float) -> void:
 		
 		$TimerLaser.start()
 		
+		
 		# Emite o laser com a posicao de saida dele
 		laser.emit(posicao_saida_laser.global_position, direction)
 		
@@ -73,15 +75,13 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		interacao()
 
+# Hud da arma
 func hud_arma() -> void:
 	print(municao, "/", MUNICAO_LASER)
 
 # Funcao para saber o estado de municao da arma, retorna true se esta vazia false se não
 func arma_vazia() -> bool:
 	return true if municao == VAZIO else false
-
-# Hud da arma
-
 
 # Funcao para disparo ao apertar o botao esquerdo do mouse, decrementa em 1 a municao
 func disparo() -> void:

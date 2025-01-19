@@ -9,3 +9,6 @@ func _process(_delta: float) -> void:
 	velocity = velocidade * direcao
 	
 	move_and_slide()
+
+func hit() -> void:
+	print("hit")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhfs55owpsl0w"]
+[gd_scene load_steps=5 format=3 uid="uid://bhfs55owpsl0w"]
 
 [ext_resource type="Script" path="res://scenes/projeteis/laser.gd" id="1_i8egb"]
 [ext_resource type="Texture2D" uid="uid://bcokuscsiyw72" path="res://graphics/projectiles/blue.png" id="1_vsxns"]
@@ -7,29 +7,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3lj1o"]
 radius = 5.0
 height = 86.0
-
-[sub_resource type="Animation" id="Animation_jbox8"]
-resource_name = "removeLaser"
-length = 2.0
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1.96667),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"queue_free"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_846hc"]
-_data = {
-"removeLaser": SubResource("Animation_jbox8")
-}
 
 [node name="Laser" type="Area2D"]
 collision_layer = 8
@@ -52,8 +29,9 @@ shadow_enabled = true
 texture = ExtResource("3_4exm5")
 texture_scale = 1.5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_846hc")
-}
-autoplay = "removeLaser"
+[node name="TempoVida" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="TempoVida" to="." method="_on_tempo_vida_timeout"]
