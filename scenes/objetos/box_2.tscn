@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://diwjic3dmrd1v"]
+
+[ext_resource type="PackedScene" uid="uid://6rf7ihf1jipq" path="res://scenes/objetos/generic_object.tscn" id="1_ojey6"]
+[ext_resource type="Texture2D" uid="uid://dcbldfrgc63gm" path="res://graphics/objects/Box.png" id="2_3lsn0"]
+[ext_resource type="Script" path="res://scenes/objetos/box_2.gd" id="2_gib5p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yo58h"]
+size = Vector2(352, 251)
+
+[node name="Box2" instance=ExtResource("1_ojey6")]
+script = ExtResource("2_gib5p")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_3lsn0")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_yo58h")

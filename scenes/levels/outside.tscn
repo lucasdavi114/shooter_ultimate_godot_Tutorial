@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://degp68mkk7rkn"]
+[gd_scene load_steps=32 format=4 uid="uid://degp68mkk7rkn"]
 
 [ext_resource type="PackedScene" uid="uid://d2jtyd4e8f6kt" path="res://scenes/levels/level.tscn" id="1_270pw"]
 [ext_resource type="Texture2D" uid="uid://wvnq82hqa0lg" path="res://graphics/ground/stones.png" id="2_7klif"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://yg1cv2ck12e4" path="res://scenes/objetos/steam_vent.tscn" id="17_pp3ta"]
 [ext_resource type="PackedScene" uid="uid://clocf6jnnxr87" path="res://scenes/levels/house.tscn" id="18_l2pcj"]
 [ext_resource type="PackedScene" uid="uid://c6qrcogtddifr" path="res://scenes/objetos/light_fan_animation.tscn" id="19_e0t32"]
+[ext_resource type="PackedScene" uid="uid://diwjic3dmrd1v" path="res://scenes/objetos/box_2.tscn" id="23_0ix5r"]
+[ext_resource type="PackedScene" uid="uid://cj613e2nxim0y" path="res://scenes/objetos/box.tscn" id="23_k4ydy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mcfnw"]
 texture = ExtResource("3_mq6ln")
@@ -250,11 +252,17 @@ position = Vector2(-2044, 1652)
 scale = Vector2(0.309, 0.308)
 metadata/_edit_lock_ = true
 
-[node name="Gate" parent="." index="1" instance=ExtResource("2_38sjs")]
+[node name="box" parent="Ground" index="19" instance=ExtResource("23_k4ydy")]
+position = Vector2(-174, 370)
+
+[node name="Gate" parent="Ground" index="20" instance=ExtResource("2_38sjs")]
 position = Vector2(524, -860)
 
-[node name="Drone" parent="." index="4" instance=ExtResource("2_xlvpx")]
+[node name="Box2" parent="Ground" index="21" instance=ExtResource("23_0ix5r")]
+position = Vector2(1314, 353)
+
+[node name="Drone" parent="." index="3" instance=ExtResource("2_xlvpx")]
 position = Vector2(680, 920)
 
-[connection signal="Player_Entrou_na_Area" from="Gate" to="." method="_on_gate_player_entrou_na_area"]
-[connection signal="Player_Saiu_Da_Area" from="Gate" to="." method="_on_gate_player_saiu_da_area"]
+[connection signal="Player_Entrou_na_Area" from="Ground/Gate" to="." method="_on_gate_player_entrou_na_area"]
+[connection signal="Player_Saiu_Da_Area" from="Ground/Gate" to="." method="_on_gate_player_saiu_da_area"]
