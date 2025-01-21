@@ -32,7 +32,7 @@ collision_mask = 63
 script = ExtResource("1_fq36g")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(133, 20)
+position = Vector2(126, 20)
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_3snic")
 texture = ExtResource("3_03qyq")
@@ -53,13 +53,13 @@ one_shot = true
 [node name="SaidaProjeteis" type="Node2D" parent="."]
 
 [node name="SaidaBalas" type="Marker2D" parent="SaidaProjeteis"]
-position = Vector2(129, 11)
+position = Vector2(123, 11)
 
 [node name="SaidaBalas2" type="Marker2D" parent="SaidaProjeteis"]
-position = Vector2(133, 20)
+position = Vector2(126, 20)
 
 [node name="SaidaBalas3" type="Marker2D" parent="SaidaProjeteis"]
-position = Vector2(129, 29)
+position = Vector2(123, 29)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_xx6r5")
