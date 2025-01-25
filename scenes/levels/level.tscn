@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2jtyd4e8f6kt"]
+[gd_scene load_steps=4 format=3 uid="uid://d2jtyd4e8f6kt"]
 
 [ext_resource type="PackedScene" uid="uid://c3hboqlqfxcdd" path="res://scenes/mobs/player/player.tscn" id="1_h4ino"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_hrbbt"]
+[ext_resource type="PackedScene" uid="uid://beh0fwoifeh6o" path="res://scenes/Interfaces/ui.tscn" id="3_wn8tf"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hrbbt")
@@ -21,6 +22,8 @@ scale = Vector2(0.5, 0.5)
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 metadata/_edit_lock_ = true
+
+[node name="UI" parent="." instance=ExtResource("3_wn8tf")]
 
 [connection signal="granada" from="Player" to="." method="_on_player_granada"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]

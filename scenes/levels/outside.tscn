@@ -1,10 +1,11 @@
-[gd_scene load_steps=32 format=4 uid="uid://degp68mkk7rkn"]
+[gd_scene load_steps=31 format=4 uid="uid://degp68mkk7rkn"]
 
 [ext_resource type="PackedScene" uid="uid://d2jtyd4e8f6kt" path="res://scenes/levels/level.tscn" id="1_270pw"]
 [ext_resource type="Texture2D" uid="uid://wvnq82hqa0lg" path="res://graphics/ground/stones.png" id="2_7klif"]
 [ext_resource type="PackedScene" uid="uid://b1xby7p5xk171" path="res://scenes/objetos/gate.tscn" id="2_38sjs"]
 [ext_resource type="PackedScene" uid="uid://cru1wc64g8mt1" path="res://scenes/mobs/enemies/drone.tscn" id="2_xlvpx"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_yjrnp"]
+[ext_resource type="PackedScene" uid="uid://b1ugfdplr88m" path="res://scenes/levels/inside.tscn" id="3_js0lf"]
 [ext_resource type="Texture2D" uid="uid://c7shvj3xlt2y8" path="res://graphics/tilesets/soil.png" id="3_mq6ln"]
 [ext_resource type="Texture2D" uid="uid://bq5ayq18l7pbq" path="res://graphics/decals/dirt_patch.png" id="4_qlt1y"]
 [ext_resource type="Texture2D" uid="uid://bv2e32rv0udmd" path="res://graphics/decals/moss/moss_1.png" id="5_dbg0m"]
@@ -22,8 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://yg1cv2ck12e4" path="res://scenes/objetos/steam_vent.tscn" id="17_pp3ta"]
 [ext_resource type="PackedScene" uid="uid://clocf6jnnxr87" path="res://scenes/levels/house.tscn" id="18_l2pcj"]
 [ext_resource type="PackedScene" uid="uid://c6qrcogtddifr" path="res://scenes/objetos/light_fan_animation.tscn" id="19_e0t32"]
-[ext_resource type="PackedScene" uid="uid://diwjic3dmrd1v" path="res://scenes/objetos/box_2.tscn" id="23_0ix5r"]
-[ext_resource type="PackedScene" uid="uid://cj613e2nxim0y" path="res://scenes/objetos/box.tscn" id="23_k4ydy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mcfnw"]
 texture = ExtResource("3_mq6ln")
@@ -151,6 +150,7 @@ sources/3 = SubResource("TileSetAtlasSource_li8xv")
 
 [node name="Outside" instance=ExtResource("1_270pw")]
 script = ExtResource("2_yjrnp")
+inside_level_scene = ExtResource("3_js0lf")
 
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
@@ -252,14 +252,12 @@ position = Vector2(-2044, 1652)
 scale = Vector2(0.309, 0.308)
 metadata/_edit_lock_ = true
 
-[node name="box" parent="Ground" index="19" instance=ExtResource("23_k4ydy")]
-position = Vector2(-174, 370)
-
-[node name="Gate" parent="Ground" index="20" instance=ExtResource("2_38sjs")]
+[node name="Gate" parent="Ground" index="19" instance=ExtResource("2_38sjs")]
 position = Vector2(524, -860)
 
-[node name="Box2" parent="Ground" index="21" instance=ExtResource("23_0ix5r")]
-position = Vector2(1314, 353)
+[node name="Player" parent="." index="2"]
+position = Vector2(582, 165)
+rotation = 1.57079
 
 [node name="Drone" parent="." index="3" instance=ExtResource("2_xlvpx")]
 position = Vector2(680, 920)
