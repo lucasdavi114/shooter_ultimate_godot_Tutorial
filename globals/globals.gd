@@ -6,6 +6,3 @@ const VAZIO: int = 0
 
 var municao: int = 25
 var granadas: int = 5
-
-func reload():
-	municao = MUNICAO_LASER

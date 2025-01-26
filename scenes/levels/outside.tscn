@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://b1xby7p5xk171" path="res://scenes/objetos/gate.tscn" id="2_38sjs"]
 [ext_resource type="PackedScene" uid="uid://cru1wc64g8mt1" path="res://scenes/mobs/enemies/drone.tscn" id="2_xlvpx"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_yjrnp"]
-[ext_resource type="PackedScene" uid="uid://b1ugfdplr88m" path="res://scenes/levels/inside.tscn" id="3_js0lf"]
 [ext_resource type="Texture2D" uid="uid://c7shvj3xlt2y8" path="res://graphics/tilesets/soil.png" id="3_mq6ln"]
 [ext_resource type="Texture2D" uid="uid://bq5ayq18l7pbq" path="res://graphics/decals/dirt_patch.png" id="4_qlt1y"]
 [ext_resource type="Texture2D" uid="uid://bv2e32rv0udmd" path="res://graphics/decals/moss/moss_1.png" id="5_dbg0m"]
@@ -23,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://yg1cv2ck12e4" path="res://scenes/objetos/steam_vent.tscn" id="17_pp3ta"]
 [ext_resource type="PackedScene" uid="uid://clocf6jnnxr87" path="res://scenes/levels/house.tscn" id="18_l2pcj"]
 [ext_resource type="PackedScene" uid="uid://c6qrcogtddifr" path="res://scenes/objetos/light_fan_animation.tscn" id="19_e0t32"]
+[ext_resource type="PackedScene" uid="uid://cji0uk2kdmohj" path="res://scenes/items/items.tscn" id="23_crxoq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mcfnw"]
 texture = ExtResource("3_mq6ln")
@@ -150,7 +150,6 @@ sources/3 = SubResource("TileSetAtlasSource_li8xv")
 
 [node name="Outside" instance=ExtResource("1_270pw")]
 script = ExtResource("2_yjrnp")
-inside_level_scene = ExtResource("3_js0lf")
 
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
@@ -255,12 +254,15 @@ metadata/_edit_lock_ = true
 [node name="Gate" parent="Ground" index="19" instance=ExtResource("2_38sjs")]
 position = Vector2(524, -860)
 
-[node name="Player" parent="." index="2"]
+[node name="Items" parent="." index="2" instance=ExtResource("23_crxoq")]
+position = Vector2(79, 234)
+
+[node name="Drone" parent="." index="4" instance=ExtResource("2_xlvpx")]
+position = Vector2(680, 920)
+
+[node name="Player" parent="." index="5"]
 position = Vector2(582, 165)
 rotation = 1.57079
-
-[node name="Drone" parent="." index="3" instance=ExtResource("2_xlvpx")]
-position = Vector2(680, 920)
 
 [connection signal="Player_Entrou_na_Area" from="Ground/Gate" to="." method="_on_gate_player_entrou_na_area"]
 [connection signal="Player_Saiu_Da_Area" from="Ground/Gate" to="." method="_on_gate_player_saiu_da_area"]

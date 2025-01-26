@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://b1ugfdplr88m"]
+[gd_scene load_steps=14 format=4 uid="uid://b1ugfdplr88m"]
 
 [ext_resource type="PackedScene" uid="uid://d2jtyd4e8f6kt" path="res://scenes/levels/level.tscn" id="1_5yqmf"]
 [ext_resource type="Script" path="res://scenes/levels/inside.gd" id="2_6dfd1"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://brcckglkoct8d" path="res://scenes/objetos/simple_light.tscn" id="7_5qqat"]
 [ext_resource type="PackedScene" uid="uid://yg1cv2ck12e4" path="res://scenes/objetos/steam_vent.tscn" id="9_c0abw"]
 [ext_resource type="Texture2D" uid="uid://bqsye47j8n025" path="res://graphics/lights/textures/circle.png" id="10_4ddp4"]
+[ext_resource type="PackedScene" uid="uid://cji0uk2kdmohj" path="res://scenes/items/items.tscn" id="12_3wu03"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jl84"]
 size = Vector2(348, 392)
@@ -177,7 +178,21 @@ collision_layer = 0
 position = Vector2(-471, -298)
 collision_layer = 0
 
-[node name="Player" parent="." index="2"]
+[node name="Items" parent="." index="2" instance=ExtResource("12_3wu03")]
+position = Vector2(785, 162)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
+color = Color(0.675246, 0.778792, 0.777449, 1)
+blend_mode = 1
+
+[node name="Saida" type="Area2D" parent="." index="5"]
+position = Vector2(390, 1604)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida" index="0"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_5jl84")
+
+[node name="Player" parent="." index="6"]
 position = Vector2(398, 1293)
 rotation = -1.83259
 
@@ -185,16 +200,5 @@ rotation = -1.83259
 rotation = 0.261799
 texture = ExtResource("10_4ddp4")
 texture_scale = 3.0
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="3"]
-color = Color(0.675246, 0.778792, 0.777449, 1)
-blend_mode = 1
-
-[node name="Saida" type="Area2D" parent="." index="4"]
-position = Vector2(390, 1604)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida" index="0"]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_5jl84")
 
 [connection signal="body_entered" from="Saida" to="." method="_on_saida_body_entered"]

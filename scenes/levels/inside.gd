@@ -11,5 +11,5 @@ func _on_saida_body_entered(_body: Node2D) -> void:
 
 func change_scene(scene_path: String) -> void:
 	
-	get_tree().change_scene_to_file(scene_path)
+	TransitionLayer.change_scene(scene_path)
 	

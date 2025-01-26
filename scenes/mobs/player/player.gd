@@ -11,6 +11,7 @@ var pode_lancar_granada: bool = true
 
 signal laser(posicao_saida_laser: Vector2, direction)
 signal granada(posicao_saida_granada: Vector2, direction)
+signal update_stats()
 
 func _process(_delta: float) -> void:
 	
@@ -40,8 +41,7 @@ func _process(_delta: float) -> void:
 		
 		# Emite o laser com a posicao de saida dele
 		laser.emit(posicao_saida_laser.global_position, direction)
-	if Input.is_action_pressed("reload"):
-		Globals.reload()
+		
 	# Disparo secundário da arma, no caso um lança granadas
 	if Input.is_action_pressed("secondary_action") and pode_lancar_granada and Globals.granadas > 0:
 		Globals.granadas -= 1
@@ -65,3 +65,15 @@ func _on_timer_timeout() -> void:
 
 func _on_timer_granadas_timeout() -> void:
 	pode_lancar_granada = true
+
+func add_item(type: String):
+	if type == 'Grenade':
+		Globals.granadas += 1
+		
+	if type == 'Laser':
+		Globals.municao += 5 
+		
+	if type == 'Health':
+		print("Vida cheia!")
+	
+	update_stats.emit()
