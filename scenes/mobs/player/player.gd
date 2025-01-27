@@ -11,7 +11,7 @@ var pode_lancar_granada: bool = true
 
 signal laser(posicao_saida_laser: Vector2, direction)
 signal granada(posicao_saida_granada: Vector2, direction)
-signal update_stats()
+
 
 func _process(_delta: float) -> void:
 	
@@ -65,15 +65,3 @@ func _on_timer_timeout() -> void:
 
 func _on_timer_granadas_timeout() -> void:
 	pode_lancar_granada = true
-
-func add_item(type: String):
-	if type == 'Grenade':
-		Globals.granadas += 1
-		
-	if type == 'Laser':
-		Globals.municao += 5 
-		
-	if type == 'Health':
-		print("Vida cheia!")
-	
-	update_stats.emit()

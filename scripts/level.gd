@@ -45,3 +45,4 @@ func _on_house_player_saiu(_body: CharacterBody2D) -> void:
 func _on_player_update_stats() -> void:
 	$UI.update_hud_laser_munition()
 	$UI.update_hud_granade_munition()
+	

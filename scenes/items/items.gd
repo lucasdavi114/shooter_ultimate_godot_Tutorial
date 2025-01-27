@@ -1,6 +1,6 @@
 extends Area2D
 
-var item_types = ['Health', 'Health', 'Health', 'Grenade', 'Grenade', 'Grenade', 'Laser', 'Laser', 'Laser', 'Laser']
+var item_types =  ['Health',  'Grenade',  'Laser', 'Laser', 'Laser', 'Laser']
 
 var rotate_speed: int = 2
 var item = item_types[randi()%len(item_types)]
@@ -17,6 +17,15 @@ func _process(delta: float) -> void:
 	rotation += rotate_speed * delta
 
 
-func _on_body_entered(body: Node2D) -> void:
-	body.add_item(item)
+func _on_body_entered(_body: Node2D) -> void:
+	if item == 'Grenade':
+		Globals.granadas += 1
+		
+	if item == 'Laser':
+		Globals.municao += 5 
+	
+	if item == 'Health':
+		Globals.health += 10
+		if Globals.health > 100:
+			Globals.health = 100
 	queue_free()

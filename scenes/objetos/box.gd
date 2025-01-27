@@ -1,4 +1,4 @@
 extends ObjetoGenerico
 
 func hit():
-	print("box1")
+	print(current_direction)

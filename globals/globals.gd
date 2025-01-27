@@ -1,8 +1,16 @@
 extends Node
 
-const MUNICAO_LASER: int = 25
-const NUM_GRANADAS: int = 5
-const VAZIO: int = 0
+signal stats_change
 
-var municao: int = 25
-var granadas: int = 5
+var municao = 25:
+	set(value):
+		municao = value
+		stats_change.emit()
+var granadas = 5:
+	set(value):
+		granadas = value
+		stats_change.emit()
+var health = 60:
+	set(value):
+		health = value
+		stats_change.emit()

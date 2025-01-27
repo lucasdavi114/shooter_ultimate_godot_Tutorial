@@ -2,5 +2,4 @@ extends StaticBody2D
 
 class_name ObjetoGenerico
 
-func hit():
-	print("Objeto Generico")
+@onready var current_direction: Vector2 = Vector2.DOWN.rotated(rotation)

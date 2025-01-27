@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://degp68mkk7rkn"]
+[gd_scene load_steps=33 format=4 uid="uid://degp68mkk7rkn"]
 
 [ext_resource type="PackedScene" uid="uid://d2jtyd4e8f6kt" path="res://scenes/levels/level.tscn" id="1_270pw"]
 [ext_resource type="Texture2D" uid="uid://wvnq82hqa0lg" path="res://graphics/ground/stones.png" id="2_7klif"]
@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://clocf6jnnxr87" path="res://scenes/levels/house.tscn" id="18_l2pcj"]
 [ext_resource type="PackedScene" uid="uid://c6qrcogtddifr" path="res://scenes/objetos/light_fan_animation.tscn" id="19_e0t32"]
 [ext_resource type="PackedScene" uid="uid://cji0uk2kdmohj" path="res://scenes/items/items.tscn" id="23_crxoq"]
+[ext_resource type="PackedScene" uid="uid://diwjic3dmrd1v" path="res://scenes/objetos/box_2.tscn" id="23_wmj28"]
+[ext_resource type="PackedScene" uid="uid://cj613e2nxim0y" path="res://scenes/objetos/box.tscn" id="24_gu6d2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mcfnw"]
 texture = ExtResource("3_mq6ln")
@@ -257,12 +259,29 @@ position = Vector2(524, -860)
 [node name="Items" parent="." index="2" instance=ExtResource("23_crxoq")]
 position = Vector2(79, 234)
 
-[node name="Drone" parent="." index="4" instance=ExtResource("2_xlvpx")]
+[node name="Items2" parent="." index="3" instance=ExtResource("23_crxoq")]
+position = Vector2(172, 415)
+
+[node name="Items3" parent="." index="4" instance=ExtResource("23_crxoq")]
+position = Vector2(-99, 436)
+
+[node name="Items4" parent="." index="5" instance=ExtResource("23_crxoq")]
+position = Vector2(-170, 258)
+
+[node name="Drone" parent="." index="7" instance=ExtResource("2_xlvpx")]
 position = Vector2(680, 920)
 
-[node name="Player" parent="." index="5"]
+[node name="Player" parent="." index="8"]
 position = Vector2(582, 165)
 rotation = 1.57079
+
+[node name="Box2" parent="." index="9" instance=ExtResource("23_wmj28")]
+position = Vector2(554, 547)
+rotation = 1.5708
+
+[node name="box" parent="." index="10" instance=ExtResource("24_gu6d2")]
+position = Vector2(1111, 614)
+rotation = 3.14159
 
 [connection signal="Player_Entrou_na_Area" from="Ground/Gate" to="." method="_on_gate_player_entrou_na_area"]
 [connection signal="Player_Saiu_Da_Area" from="Ground/Gate" to="." method="_on_gate_player_saiu_da_area"]
