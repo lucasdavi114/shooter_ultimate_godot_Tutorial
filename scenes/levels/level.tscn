@@ -8,12 +8,20 @@
 script = ExtResource("1_hrbbt")
 metadata/_edit_lock_ = true
 
+[node name="Decals" type="Node2D" parent="."]
+
 [node name="Ground" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
+
+[node name="Infestation" type="Node2D" parent="."]
+
+[node name="Items" type="Node2D" parent="."]
 
 [node name="InstanciasDeProjeteis" type="Node2D" parent="."]
 
 [node name="UI" parent="." instance=ExtResource("3_wn8tf")]
+
+[node name="Enemies" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_h4ino")]
 position = Vector2(398, 464)

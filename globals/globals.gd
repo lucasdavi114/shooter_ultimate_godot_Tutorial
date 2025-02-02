@@ -10,7 +10,9 @@ var granadas = 5:
 	set(value):
 		granadas = value
 		stats_change.emit()
-var health = 60:
+var health = 100:
 	set(value):
 		health = value
 		stats_change.emit()
+
+var player_position: Vector2

@@ -7,11 +7,19 @@ var velocidade: int = max_velocidade
 var pode_atirar: bool = true
 var pode_lancar_granada: bool = true
 
-
+var vulnerable: bool = true
 
 signal laser(posicao_saida_laser: Vector2, direction)
 signal granada(posicao_saida_granada: Vector2, direction)
 
+func hit():
+	if vulnerable:
+		Globals.health -= 10
+		vulnerable = false
+		$Timers/InvulnerabilityTimer.start()
+		if Globals.health <= 0:
+			Globals.health = 0
+	
 
 func _process(_delta: float) -> void:
 	
@@ -23,6 +31,8 @@ func _process(_delta: float) -> void:
 	direcao = Input.get_vector("left", "right", "up", "down")
 	velocity = direcao * velocidade 
 	move_and_slide()
+	
+	Globals.player_position = global_position
 	
 	look_at(get_global_mouse_position())
 	
@@ -37,7 +47,7 @@ func _process(_delta: float) -> void:
 		
 		pode_atirar = false
 		
-		$TimerLaser.start()
+		$Timers/TimerLaser.start()
 		
 		# Emite o laser com a posicao de saida dele
 		laser.emit(posicao_saida_laser.global_position, direction)
@@ -50,7 +60,7 @@ func _process(_delta: float) -> void:
 		var posicao_saida_granada = marcador_granada
 		disparo_secundario()
 		pode_lancar_granada = false
-		$TimerGranadas.start()
+		$Timers/TimerGranadas.start()
 		
 		
 		granada.emit(posicao_saida_granada.global_position, direction)
@@ -65,3 +75,7 @@ func _on_timer_timeout() -> void:
 
 func _on_timer_granadas_timeout() -> void:
 	pode_lancar_granada = true
+
+
+func _on_invulnerability_timer_timeout() -> void:
+	vulnerable = true
