@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://d2jtyd4e8f6kt" path="res://scenes/levels/level.tscn" id="1_270pw"]
 [ext_resource type="Texture2D" uid="uid://wvnq82hqa0lg" path="res://graphics/ground/stones.png" id="2_7klif"]
 [ext_resource type="PackedScene" uid="uid://b1xby7p5xk171" path="res://scenes/objetos/gate.tscn" id="2_38sjs"]
-[ext_resource type="PackedScene" uid="uid://cru1wc64g8mt1" path="res://scenes/mobs/enemies/drone.tscn" id="2_xlvpx"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_yjrnp"]
 [ext_resource type="Texture2D" uid="uid://c7shvj3xlt2y8" path="res://graphics/tilesets/soil.png" id="3_mq6ln"]
 [ext_resource type="Texture2D" uid="uid://bq5ayq18l7pbq" path="res://graphics/decals/dirt_patch.png" id="4_qlt1y"]
@@ -17,8 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://clw4l4bvo2nhr" path="res://graphics/tilesets/outside_walls.png" id="16_ycpey"]
 [ext_resource type="PackedScene" uid="uid://yg1cv2ck12e4" path="res://scenes/objetos/steam_vent.tscn" id="17_pp3ta"]
 [ext_resource type="PackedScene" uid="uid://clocf6jnnxr87" path="res://scenes/levels/house.tscn" id="18_l2pcj"]
+[ext_resource type="PackedScene" uid="uid://dvs0udh57jrv0" path="res://scenes/mobs/enemies/car.tscn" id="19_5c5ir"]
 [ext_resource type="PackedScene" uid="uid://c6qrcogtddifr" path="res://scenes/objetos/light_fan_animation.tscn" id="19_e0t32"]
-[ext_resource type="PackedScene" uid="uid://bhe0uwcfb0dat" path="res://scenes/mobs/enemies/scout.tscn" id="20_r0ujj"]
 [ext_resource type="PackedScene" uid="uid://cj613e2nxim0y" path="res://scenes/objetos/box.tscn" id="24_gu6d2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mcfnw"]
@@ -139,11 +138,18 @@ texture_region_size = Vector2i(390, 390)
 
 [sub_resource type="TileSet" id="TileSet_b573t"]
 tile_size = Vector2i(390, 390)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 11
 sources/0 = SubResource("TileSetAtlasSource_p3kfu")
 sources/1 = SubResource("TileSetAtlasSource_tso0n")
 sources/2 = SubResource("TileSetAtlasSource_qwkq8")
 sources/3 = SubResource("TileSetAtlasSource_li8xv")
+
+[sub_resource type="Curve2D" id="Curve2D_3bhbg"]
+_data = {
+"points": PackedVector2Array(7.45412, -411.528, -7.45412, 411.528, -382, 906, -501.71, -355.906, 501.71, 355.906, 194, 2421, -260.891, 212.337, 260.891, -212.337, 3146, 2485, 211.234, 472.033, -211.234, -472.033, 3254, 453, 199.561, -420.504, -199.561, 420.504, 2366, 513, 548.121, -276.738, -548.121, 276.738, 2294, 2429, 471.364, 366.933, -471.364, -366.933, 766, 2409, 249.5, 437.266, -249.5, -437.266, 846, 537, 137.685, -175.821, -137.685, 175.821, -203, 307, 0, 0, 0, 0, -340, 577, 0, 0, 0, 0, -376, 766, 0, 0, 0, 0, -382, 906)
+}
+point_count = 12
 
 [node name="Outside" instance=ExtResource("1_270pw")]
 script = ExtResource("2_yjrnp")
@@ -227,15 +233,16 @@ rotation = -0.453925
 position = Vector2(2082, 1859)
 rotation = -1.57079
 
-[node name="Drone" parent="." index="3" instance=ExtResource("2_xlvpx")]
-position = Vector2(680, 920)
-
-[node name="Scout" parent="Enemies" index="0" instance=ExtResource("20_r0ujj")]
-position = Vector2(9, 1150)
-
-[node name="Player" parent="." index="8"]
+[node name="Player" parent="." index="7"]
 position = Vector2(582, 165)
 rotation = 1.57079
+
+[node name="CarPath" type="Path2D" parent="." index="8"]
+curve = SubResource("Curve2D_3bhbg")
+
+[node name="Car" parent="CarPath" index="0" instance=ExtResource("19_5c5ir")]
+position = Vector2(-382, 906)
+rotation = 1.58891
 
 [connection signal="player_entrou" from="Ground/House" to="." method="_on_house_player_entrou"]
 [connection signal="player_saiu" from="Ground/House" to="." method="_on_house_player_saiu"]

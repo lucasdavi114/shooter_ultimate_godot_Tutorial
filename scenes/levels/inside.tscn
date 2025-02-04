@@ -501,7 +501,7 @@ z_index = 5
 position = Vector2(398, 1293)
 rotation = -1.83259
 
-[node name="PointLight2D" type="PointLight2D" parent="Player" index="8"]
+[node name="PointLight2D" type="PointLight2D" parent="Player" index="7"]
 rotation = 0.261799
 texture = ExtResource("10_4ddp4")
 texture_scale = 3.0
