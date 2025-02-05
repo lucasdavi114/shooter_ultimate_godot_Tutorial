@@ -3,7 +3,7 @@ extends LevelParent
 func _on_gate_player_entrou_na_area() -> void:
 	
 	var tween = create_tween()
-	
+	tween.set_parallel(true)
 	tween.tween_property($Player, "velocidade", 0, 0.5)
 	
 	call_deferred("change_scene", "res://scenes/levels/inside.tscn")

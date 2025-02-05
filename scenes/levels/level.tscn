@@ -15,6 +15,8 @@ metadata/_edit_lock_ = true
 
 [node name="Infestation" type="Node2D" parent="."]
 
+[node name="Interagiveis" type="Node2D" parent="."]
+
 [node name="Items" type="Node2D" parent="."]
 
 [node name="InstanciasDeProjeteis" type="Node2D" parent="."]
