@@ -41,10 +41,11 @@ func hit() -> void:
 		health -= 10
 		vulnerable = false
 		$HitTimer.start()
-		$DroneSprite.material.set_shader_parameter("progress", 1)
+		$Sounds/HitSound.play()
 	if health <= 0:
 		$AnimationPlayer.play("explosion")
 		explosion_active = true
+		
 
 func _on_notice_area_body_entered(_body: Node2D) -> void:
 	active = true
@@ -54,4 +55,3 @@ func _on_notice_area_body_entered(_body: Node2D) -> void:
 
 func _on_hit_timer_timeout() -> void:
 	vulnerable = true
-	$DroneSprite.material.set_shader_parameter("progress", 0)

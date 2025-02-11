@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://b1ugfdplr88m"]
+[gd_scene load_steps=31 format=4 uid="uid://b1ugfdplr88m"]
 
 [ext_resource type="PackedScene" uid="uid://d2jtyd4e8f6kt" path="res://scenes/levels/level.tscn" id="1_5yqmf"]
 [ext_resource type="Script" path="res://scenes/levels/inside.gd" id="2_6dfd1"]
@@ -27,6 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://c85vhgsd1ulcc" path="res://graphics/objects/infestation/small_4.png" id="24_vs2ll"]
 [ext_resource type="Texture2D" uid="uid://ckudt7uflks3c" path="res://graphics/objects/infestation/spikes.png" id="25_fpign"]
 [ext_resource type="Texture2D" uid="uid://b5oaa1ewaxy0k" path="res://graphics/objects/corner.png" id="26_x6i3i"]
+[ext_resource type="PackedScene" uid="uid://bc2fxb0iwps5" path="res://scenes/mobs/enemies/bug_enemy.tscn" id="27_bppay"]
+[ext_resource type="PackedScene" uid="uid://bhe0uwcfb0dat" path="res://scenes/mobs/enemies/scout.tscn" id="28_5ece0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jl84"]
 size = Vector2(348, 392)
@@ -486,6 +488,7 @@ position = Vector2(260.435, 245.291)
 polygon = PackedVector2Array(4534.91, -4711.47, 4519.65, -4700.22, 4508.78, -4678.71, 4489.5, -4665.66, 4506.91, -4660.75, 4511.05, -4645.48, 4520.09, -4629.96, 4522.28, -4614.8, 4518.01, -4587.93, 4545.21, -4602.57, 4558.7, -4597.86, 4571.46, -4598.2, 4595.04, -4598.98, 4620.86, -4605.67, 4622.33, -4615.63, 4633.44, -4622.07, 4641.96, -4635.68, 4642.45, -4645.69, 4642.9, -4654.69, 4649.11, -4661.4, 4655.43, -4670.1, 4642.91, -4674.76, 4636.61, -4686.13, 4631.75, -4726.51, 4602.94, -4718.98, 4581.67, -4725.1, 4552.86, -4717.56, 4545.34, -4723.97, 4543.81, -4713.01)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="3"]
+visible = false
 color = Color(0.66383, 0.765625, 0.764305, 1)
 blend_mode = 1
 
@@ -495,6 +498,66 @@ position = Vector2(390, 1604)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Saida" index="0"]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_5jl84")
+
+[node name="BugEnemy" parent="Enemies" index="0" instance=ExtResource("27_bppay")]
+position = Vector2(3308, -5850)
+
+[node name="BugEnemy13" parent="Enemies" index="1" instance=ExtResource("27_bppay")]
+position = Vector2(-544, -3524)
+
+[node name="BugEnemy14" parent="Enemies" index="2" instance=ExtResource("27_bppay")]
+position = Vector2(-822, -2868)
+
+[node name="BugEnemy15" parent="Enemies" index="3" instance=ExtResource("27_bppay")]
+position = Vector2(1136, -3568)
+
+[node name="BugEnemy16" parent="Enemies" index="4" instance=ExtResource("27_bppay")]
+position = Vector2(1630, -2868)
+
+[node name="BugEnemy2" parent="Enemies" index="5" instance=ExtResource("27_bppay")]
+position = Vector2(4781, -5305)
+
+[node name="BugEnemy3" parent="Enemies" index="6" instance=ExtResource("27_bppay")]
+position = Vector2(3543, -4316)
+
+[node name="BugEnemy4" parent="Enemies" index="7" instance=ExtResource("27_bppay")]
+position = Vector2(4962, -3764)
+
+[node name="BugEnemy5" parent="Enemies" index="8" instance=ExtResource("27_bppay")]
+position = Vector2(5742, -4598)
+
+[node name="BugEnemy6" parent="Enemies" index="9" instance=ExtResource("27_bppay")]
+position = Vector2(5715, -5802)
+
+[node name="BugEnemy7" parent="Enemies" index="10" instance=ExtResource("27_bppay")]
+position = Vector2(4726, -6044)
+
+[node name="BugEnemy8" parent="Enemies" index="11" instance=ExtResource("27_bppay")]
+position = Vector2(3919, -5190)
+
+[node name="BugEnemy9" parent="Enemies" index="12" instance=ExtResource("27_bppay")]
+position = Vector2(3993, -3528)
+
+[node name="BugEnemy10" parent="Enemies" index="13" instance=ExtResource("27_bppay")]
+position = Vector2(5863, -3373)
+
+[node name="BugEnemy11" parent="Enemies" index="14" instance=ExtResource("27_bppay")]
+position = Vector2(3226, -3393)
+
+[node name="BugEnemy12" parent="Enemies" index="15" instance=ExtResource("27_bppay")]
+position = Vector2(4302, -4160)
+
+[node name="Scout" parent="Enemies" index="16" instance=ExtResource("28_5ece0")]
+position = Vector2(2933, -1547)
+
+[node name="Scout2" parent="Enemies" index="17" instance=ExtResource("28_5ece0")]
+position = Vector2(67, -746)
+
+[node name="Scout3" parent="Enemies" index="18" instance=ExtResource("28_5ece0")]
+position = Vector2(-592, -2912)
+
+[node name="Scout4" parent="Enemies" index="19" instance=ExtResource("28_5ece0")]
+position = Vector2(1379, -2899)
 
 [node name="Player" parent="." index="10"]
 z_index = 5

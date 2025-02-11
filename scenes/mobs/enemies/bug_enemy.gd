@@ -14,6 +14,7 @@ func hit():
 		$Timers/VulnerableTimer.start()
 		$AnimatedSprite2D.material.set_shader_parameter("progress", 1)
 		$Particles/HitParticles.emitting = true
+		$AudioStreamPlayer2D.play()
 	if health <= 0:
 		speed = 0
 		await get_tree().create_timer(0.5).timeout

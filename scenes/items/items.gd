@@ -39,4 +39,7 @@ func _on_body_entered(_body: Node2D) -> void:
 		Globals.health += 10
 		if Globals.health > 100:
 			Globals.health = 100
+	$AudioStreamPlayer2D.play()
+	$Sprite2D.hide()
+	await $AudioStreamPlayer2D.finished
 	queue_free()
