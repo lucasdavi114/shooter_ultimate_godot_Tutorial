@@ -1,11 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://bhe0uwcfb0dat"]
 
 [ext_resource type="Texture2D" uid="uid://dodurqyroyjnx" path="res://graphics/enemies/scout.png" id="1_11kli"]
-[ext_resource type="Script" path="res://scenes/mobs/enemies/scout.gd" id="1_vhp6k"]
-[ext_resource type="Shader" path="res://scenes/mobs/enemies/scout.gdshader" id="2_4byxm"]
+[ext_resource type="Script" uid="uid://bbh4x3musyoyg" path="res://scenes/mobs/enemies/scout.gd" id="1_vhp6k"]
+[ext_resource type="Shader" uid="uid://vbgfmo4ypwk0" path="res://scenes/mobs/enemies/scout.gdshader" id="2_4byxm"]
 [ext_resource type="AudioStream" uid="uid://dkrhscxpv83an" path="res://audio/solid_impact.ogg" id="4_6ag8n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gxt53"]
+resource_local_to_scene = true
 shader = ExtResource("2_4byxm")
 shader_parameter/color = Color(0.749202, 0.892995, 0.986425, 1)
 shader_parameter/progress = 0.0

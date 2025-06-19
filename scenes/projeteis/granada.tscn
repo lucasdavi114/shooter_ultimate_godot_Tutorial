@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cmsjskpxatq5w"]
 
-[ext_resource type="Script" path="res://scenes/projeteis/granada.gd" id="1_8w80h"]
+[ext_resource type="Script" uid="uid://b4i128kwn7sxg" path="res://scenes/projeteis/granada.gd" id="1_8w80h"]
 [ext_resource type="Texture2D" uid="uid://brfahd2p8dbqn" path="res://graphics/projectiles/grenade.png" id="1_wwmnd"]
 [ext_resource type="Texture2D" uid="uid://byiq0lacnpkv2" path="res://graphics/explosions/explosion_3.png" id="3_1opwi"]
 [ext_resource type="AudioStream" uid="uid://bo5ebn73cyppp" path="res://audio/explosion.wav" id="4_8fhqk"]
@@ -275,9 +275,9 @@ tracks/7/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cy35b"]
 _data = {
-"Piscar": SubResource("Animation_7x1ik"),
-"RESET": SubResource("Animation_f2u44"),
-"explosion": SubResource("Animation_in5i5")
+&"Piscar": SubResource("Animation_7x1ik"),
+&"RESET": SubResource("Animation_f2u44"),
+&"explosion": SubResource("Animation_in5i5")
 }
 
 [node name="Granada" type="RigidBody2D"]

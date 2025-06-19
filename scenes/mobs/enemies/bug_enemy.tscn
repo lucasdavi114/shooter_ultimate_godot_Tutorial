@@ -1,9 +1,9 @@
 [gd_scene load_steps=44 format=3 uid="uid://bc2fxb0iwps5"]
 
-[ext_resource type="Script" path="res://scenes/mobs/enemies/bug_enemy.gd" id="1_f68e7"]
+[ext_resource type="Script" uid="uid://ck2v3lstkfj6b" path="res://scenes/mobs/enemies/bug_enemy.gd" id="1_f68e7"]
 [ext_resource type="Texture2D" uid="uid://bx6l1sk6pjqjn" path="res://graphics/enemies/bug/attack/00010.png" id="1_kkw2n"]
 [ext_resource type="Texture2D" uid="uid://dl8dopns3u2xv" path="res://graphics/enemies/bug/attack/00011.png" id="2_atwmk"]
-[ext_resource type="Shader" path="res://scenes/mobs/enemies/bug_enemy.gdshader" id="2_q4ksg"]
+[ext_resource type="Shader" uid="uid://dmaf88s1b8a25" path="res://scenes/mobs/enemies/bug_enemy.gdshader" id="2_q4ksg"]
 [ext_resource type="Texture2D" uid="uid://xc83jmd36lxs" path="res://graphics/enemies/bug/attack/00012.png" id="3_ox1jh"]
 [ext_resource type="Texture2D" uid="uid://dgyb5ivaasu3i" path="res://graphics/enemies/bug/attack/00013.png" id="4_2542o"]
 [ext_resource type="Texture2D" uid="uid://bnfecbtif8n5u" path="res://graphics/enemies/bug/attack/00014.png" id="5_y7lfw"]
@@ -36,6 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://yyqke0gl02tq" path="res://audio/organic_impact.mp3" id="34_8pfjk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mcf7x"]
+resource_local_to_scene = true
 shader = ExtResource("2_q4ksg")
 shader_parameter/color = Color(0.80082, 1, 0.962455, 1)
 shader_parameter/progress = 0.0
@@ -225,10 +226,10 @@ modulate = Color(0.137255, 0.160784, 0.117647, 1)
 material = SubResource("CanvasItemMaterial_w5v8l")
 emitting = false
 amount = 50
-process_material = SubResource("ParticleProcessMaterial_j0um4")
 texture = ExtResource("33_xxxny")
 lifetime = 0.5
 one_shot = true
+process_material = SubResource("ParticleProcessMaterial_j0um4")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("34_8pfjk")

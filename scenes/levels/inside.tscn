@@ -1,7 +1,7 @@
 [gd_scene load_steps=31 format=4 uid="uid://b1ugfdplr88m"]
 
 [ext_resource type="PackedScene" uid="uid://d2jtyd4e8f6kt" path="res://scenes/levels/level.tscn" id="1_5yqmf"]
-[ext_resource type="Script" path="res://scenes/levels/inside.gd" id="2_6dfd1"]
+[ext_resource type="Script" uid="uid://c66hog62jbysc" path="res://scenes/levels/inside.gd" id="2_6dfd1"]
 [ext_resource type="TileSet" uid="uid://ciw8apb5wmd2x" path="res://scenes/levels/ground.tres" id="2_8emjy"]
 [ext_resource type="Texture2D" uid="uid://djv8vudb0d8d1" path="res://graphics/ground/dirt.png" id="2_r1gia"]
 [ext_resource type="Texture2D" uid="uid://dcudp1151a60t" path="res://graphics/decals/brushes/brush044.png" id="3_td7bl"]
@@ -39,33 +39,28 @@ script = ExtResource("2_6dfd1")
 [node name="Decals" parent="." index="0"]
 z_index = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Decals" index="0"]
-modulate = Color(0.121569, 0.172549, 0.12549, 0.698039)
-position = Vector2(4569, -4754)
-texture = ExtResource("3_td7bl")
-
-[node name="Brush045" type="Sprite2D" parent="Decals" index="1"]
+[node name="Brush045" type="Sprite2D" parent="Decals" index="0"]
 modulate = Color(0, 0, 0, 0.254902)
 position = Vector2(4304, -3544)
 texture = ExtResource("4_xxe3f")
 
-[node name="Brush046" type="Sprite2D" parent="Decals" index="2"]
+[node name="Brush046" type="Sprite2D" parent="Decals" index="1"]
 modulate = Color(0, 0, 0, 0.254902)
 position = Vector2(2901, -896)
 texture = ExtResource("4_xxe3f")
 
-[node name="Brush047" type="Sprite2D" parent="Decals" index="3"]
+[node name="Brush047" type="Sprite2D" parent="Decals" index="2"]
 modulate = Color(0.219608, 0.219608, 0.219608, 0.364706)
 position = Vector2(661, 694)
 scale = Vector2(0.688799, 0.41966)
 texture = ExtResource("5_s0j8x")
 
-[node name="Brush049" type="Sprite2D" parent="Decals" index="4"]
+[node name="Brush049" type="Sprite2D" parent="Decals" index="3"]
 modulate = Color(0.367188, 0.0518382, 0.0518382, 0.384314)
 position = Vector2(1567, -3048)
 texture = ExtResource("6_rd5ih")
 
-[node name="Brush051" type="Sprite2D" parent="Decals" index="5"]
+[node name="Brush051" type="Sprite2D" parent="Decals" index="4"]
 modulate = Color(1, 0, 0, 0.152941)
 position = Vector2(-769, -3577)
 scale = Vector2(1.40551, 1.4529)
@@ -270,6 +265,11 @@ rotation = 1.5708
 [node name="box3" parent="Ground" index="51" instance=ExtResource("6_efb53")]
 position = Vector2(2678, -4059)
 rotation = -1.5708
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ground" index="52"]
+modulate = Color(0.121569, 0.172549, 0.12549, 0.698039)
+position = Vector2(4587, -4754)
+texture = ExtResource("3_td7bl")
 
 [node name="Infestation" parent="." index="2"]
 z_index = 2
@@ -515,7 +515,7 @@ position = Vector2(1136, -3568)
 position = Vector2(1630, -2868)
 
 [node name="BugEnemy2" parent="Enemies" index="5" instance=ExtResource("27_bppay")]
-position = Vector2(4781, -5305)
+position = Vector2(4812, -5288)
 
 [node name="BugEnemy3" parent="Enemies" index="6" instance=ExtResource("27_bppay")]
 position = Vector2(3543, -4316)
@@ -561,7 +561,7 @@ position = Vector2(1379, -2899)
 
 [node name="Player" parent="." index="10"]
 z_index = 5
-position = Vector2(398, 1293)
+position = Vector2(4771, -3459)
 rotation = -1.83259
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" index="7"]

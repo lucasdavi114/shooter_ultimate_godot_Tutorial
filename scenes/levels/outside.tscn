@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d2jtyd4e8f6kt" path="res://scenes/levels/level.tscn" id="1_270pw"]
 [ext_resource type="Texture2D" uid="uid://wvnq82hqa0lg" path="res://graphics/ground/stones.png" id="2_7klif"]
 [ext_resource type="PackedScene" uid="uid://b1xby7p5xk171" path="res://scenes/objetos/gate.tscn" id="2_38sjs"]
-[ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_yjrnp"]
+[ext_resource type="Script" uid="uid://clwwvo37ahhtd" path="res://scenes/levels/outside.gd" id="2_yjrnp"]
 [ext_resource type="Texture2D" uid="uid://c7shvj3xlt2y8" path="res://graphics/tilesets/soil.png" id="3_mq6ln"]
 [ext_resource type="Texture2D" uid="uid://bq5ayq18l7pbq" path="res://graphics/decals/dirt_patch.png" id="4_qlt1y"]
 [ext_resource type="Texture2D" uid="uid://bv2e32rv0udmd" path="res://graphics/decals/moss/moss_1.png" id="5_dbg0m"]

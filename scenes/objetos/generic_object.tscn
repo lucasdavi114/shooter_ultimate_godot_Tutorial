@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://6rf7ihf1jipq"]
 
-[ext_resource type="Script" path="res://scenes/objetos/generic_object.gd" id="1_1ih8e"]
+[ext_resource type="Script" uid="uid://c2igxvaawkq72" path="res://scenes/objetos/generic_object.gd" id="1_1ih8e"]
 [ext_resource type="AudioStream" uid="uid://brflv04par23n" path="res://audio/container_hit.mp3" id="2_ottn1"]
 
 [node name="GenericObject" type="StaticBody2D" groups=["Container"]]

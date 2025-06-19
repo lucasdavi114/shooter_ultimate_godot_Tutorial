@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://bygn1fb7eeldw"]
 
-[ext_resource type="Script" path="res://scenes/mobs/enemies/hunter.gd" id="1_dlb8i"]
+[ext_resource type="Script" uid="uid://cful3r46fu2x4" path="res://scenes/mobs/enemies/hunter.gd" id="1_dlb8i"]
 [ext_resource type="Texture2D" uid="uid://d237ranpvu2ia" path="res://graphics/enemies/hunter/parts/torso.png" id="2_rqk7q"]
 [ext_resource type="Texture2D" uid="uid://c207gg1ajwiak" path="res://graphics/enemies/hunter/parts/leg_front_inner.png" id="3_k7yoj"]
 [ext_resource type="Texture2D" uid="uid://cr4lckeimm0ij" path="res://graphics/enemies/hunter/parts/leg_front_outer.png" id="4_qv1d2"]
@@ -232,9 +232,9 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w3k4k"]
 _data = {
-"Attack": SubResource("Animation_a0m7k"),
-"RESET": SubResource("Animation_cqm8w"),
-"Walk": SubResource("Animation_17rp6")
+&"Attack": SubResource("Animation_a0m7k"),
+&"RESET": SubResource("Animation_cqm8w"),
+&"Walk": SubResource("Animation_17rp6")
 }
 
 [node name="Hunter" type="CharacterBody2D" groups=["Entity"]]
