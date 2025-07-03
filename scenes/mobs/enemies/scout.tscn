@@ -8,7 +8,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gxt53"]
 resource_local_to_scene = true
 shader = ExtResource("2_4byxm")
-shader_parameter/color = Color(0.749202, 0.892995, 0.986425, 1)
+shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/progress = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1jms"]
@@ -52,7 +52,7 @@ position = Vector2(123, 10)
 [node name="LaserCoolDown" type="Timer" parent="Timers"]
 
 [node name="HitTime" type="Timer" parent="Timers"]
-wait_time = 0.2
+wait_time = 0.05
 one_shot = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

@@ -216,7 +216,7 @@ shape = SubResource("CircleShape2D_gbp58")
 one_shot = true
 
 [node name="VulnerableTimer" type="Timer" parent="Timers"]
-wait_time = 0.2
+wait_time = 0.05
 one_shot = true
 
 [node name="Particles" type="Node2D" parent="."]

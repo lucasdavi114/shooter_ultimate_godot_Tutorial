@@ -5,7 +5,7 @@ var explosion_active: bool = false
 var explosion_radius: int = 400
 func explosion():
 	$granadeAnimation.play("explosion")
-	explosion_active = true
+	change_state_explosion()
 
 func _process(_delta: float) -> void:
 	if explosion_active:
@@ -14,3 +14,6 @@ func _process(_delta: float) -> void:
 			var in_range = target.global_position.distance_to(global_position) < explosion_radius
 			if "hit" in target and in_range:
 				target.hit()
+
+func change_state_explosion() -> void:
+	explosion_active = !explosion_active

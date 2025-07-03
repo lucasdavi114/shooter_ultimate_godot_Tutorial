@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 		var collision = move_and_collide(velocity * delta)
 		if collision:
 			$AnimationPlayer.play("explosion")
-			explosion_active = true
+			change_explosion_state()
 	if explosion_active:
 		var targets = get_tree().get_nodes_in_group("Container") + get_tree().get_nodes_in_group("Entity")
 		for target in targets:
@@ -41,10 +41,11 @@ func hit() -> void:
 		health -= 10
 		vulnerable = false
 		$HitTimer.start()
+		$DroneSprite.material.set_shader_parameter("progress", 1)
 		$Sounds/HitSound.play()
 	if health <= 0:
 		$AnimationPlayer.play("explosion")
-		explosion_active = true
+		change_explosion_state()
 		
 
 func _on_notice_area_body_entered(_body: Node2D) -> void:
@@ -55,3 +56,7 @@ func _on_notice_area_body_entered(_body: Node2D) -> void:
 
 func _on_hit_timer_timeout() -> void:
 	vulnerable = true
+	$DroneSprite.material.set_shader_parameter("progress", 0)
+
+func change_explosion_state() -> void:
+	explosion_active = !explosion_active

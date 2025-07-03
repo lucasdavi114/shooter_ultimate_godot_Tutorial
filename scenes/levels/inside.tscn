@@ -561,7 +561,7 @@ position = Vector2(1379, -2899)
 
 [node name="Player" parent="." index="10"]
 z_index = 5
-position = Vector2(4771, -3459)
+position = Vector2(390, 1328)
 rotation = -1.83259
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" index="7"]

@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://bo5ebn73cyppp" path="res://audio/explosion.wav" id="5_d5uom"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l5ncs"]
+resource_local_to_scene = true
 shader = ExtResource("2_foxls")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/progress = 0.0
@@ -19,7 +20,7 @@ radius = 71.007
 radius = 1140.48
 
 [sub_resource type="Animation" id="Animation_ua65t"]
-length = 0.001
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -103,9 +104,12 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1.6),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.566667, 1.6),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"change_explosion_state"
+}, {
 "args": [],
 "method": &"queue_free"
 }]
@@ -139,6 +143,17 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0.166667)
 }
 tracks/5/use_blend = true
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2a322"]
 _data = {
@@ -166,7 +181,7 @@ collision_layer = 16
 shape = SubResource("CircleShape2D_mv54l")
 
 [node name="HitTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.05
 one_shot = true
 
 [node name="Explosion" type="Sprite2D" parent="."]
@@ -177,7 +192,7 @@ frame = 23
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_2a322")
+&"": SubResource("AnimationLibrary_2a322")
 }
 
 [node name="Sounds" type="Node" parent="."]
